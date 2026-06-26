@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esame PWM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1 id="page-header-title">Data Esame</h1>
+    <a href="index.html" class="nav-btn">Torna alla Home</a>
+  </header>
+
+  <main>
+    <div class="toc">
+      <h3>Indice delle Domande - 27 Gennaio 2020</h3>
+      <ul>
+        <li>→ <a href="#q1">Domanda 1: Analisi Form HTML/CSS</a></li>
+        <li>→ <a href="#q2">Domanda 2: Istruzioni CSS3</a></li>
+        <li>→ <a href="#q3">Domanda 3: Statelessness RESTful</a></li>
+        <li>→ <a href="#q4">Domanda 4: Output JavaScript</a></li>
+        <li>→ <a href="#qa1">Domanda Aperta: Analisi pagina HTML/JS</a></li>
+      </ul>
+    </div>
+
+    <div class="question-block" id="q1">
+      <h4 class="question-title">Domanda 1: Quale affermazione è corretta
+        riguardo il codice della form?</h4>
+      <div class="code-cube">
+        <div class="code-cube-header">CSS / HTML</div>
+        <pre><code>form { width: 200px; padding: 60px 100px; }
+p { color: red; font-size: 16px; font-weight: 600; }
+input::placeholder {color: blue;}
+button { background: green; color: #ffffff; padding: 15px 64px; }
+...
+&lt;form&gt;
+  &lt;input type="text" placeholder="Enter Name"/&gt;
+  &lt;input type="email" placeholder="Enter email"/&gt;
+  &lt;input type="password" placeholder="Enter Password"/&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+      <ul class="solution-list">
+        <li class="solution-item"><span>1. Propone una form con 3 campi di
+            testo</span> <span class="answer-badge answer-f">FALSO (Sono text,
+            email, password)</span></li>
+        <li class="solution-item"><span>2. Il testo "enter email" è scritto in
+            verde</span> <span class="answer-badge answer-f">FALSO (I
+            placeholder sono blu)</span></li>
+        <li class="solution-item"><span>3. Non è definito il colore della
+            label submit del bottone</span> <span class="answer-badge answer-f">FALSO (È definito color:
+            #ffffff)</span></li>
+        <li class="solution-item"><span>4. Non è corretto per cui l'output non
+            è visualizzabile</span> <span class="answer-badge answer-f">FALSO
+            (Il codice è sintatticamente valido)</span></li>
+      </ul>
+      <p><em>Nota: Le opzioni sono tecnicamente tutte false in base a una
+          lettura rigorosa del codice fornito.</em></p>
+    </div>
+
+    <div class="question-block" id="q2">
+      <h4 class="question-title">Domanda 2: Quali delle seguenti istruzioni
+        CSS3 sono corrette</h4>
+      <ul class="solution-list">
+        <li class="solution-item"><span>1. h1 {font: 20px Verdana,
+            Arial}</span> <span class="answer-badge answer-v">CORRETTA</span></li>
+        <li class="solution-item"><span>2. div {color background:
+            black}</span> <span class="answer-badge answer-f">ERRATA (è
+            background-color)</span></li>
+        <li class="solution-item"><span>3. p {margin: 10px 5px 10px
+            5px;}</span> <span class="answer-badge answer-v">CORRETTA</span></li>
+      </ul>
+    </div>
+
+    <div class="question-block" id="q3">
+      <h4 class="question-title">Domanda 3: Il concetto di statelessness nei
+        servizi RESTful significa che</h4>
+      <ul class="solution-list">
+        <li class="solution-item"><span>1. Ogni richiesta HTTP è eseguita in
+            isolamento</span> <span class="answer-badge answer-v">VERO</span></li>
+        <li class="solution-item"><span>2. Il server usa informazioni da
+            richieste precedenti, nella stessa sessione</span> <span class="answer-badge answer-f">FALSO</span></li>
+        <li class="solution-item"><span>3. Il client inserisce tutto ciò che è
+            necessario a soddisfare la richiesta</span> <span class="answer-badge answer-v">VERO</span></li>
+        <li class="solution-item"><span>4. I servizi web utilizzano HTTP per
+            la gestione della sessione</span> <span class="answer-badge answer-f">FALSO (Non c'è sessione lato
+            server)</span></li>
+      </ul>
+    </div>
+
+    <div class="question-block" id="q4">
+      <h4 class="question-title">Domanda 4: Output script JavaScript</h4>
+      <div class="code-cube">
+        <div class="code-cube-header">JAVASCRIPT</div>
+        <pre><code>var b=1;
+function outer() {
+  var b=2;
+  function inner() {
+    b++;
+    var b=3;
+    console.log(b);
+  }
+  inner();
+}
+outer();</code></pre>
+      </div>
+      <ul class="solution-list">
+        <li class="solution-item"><span>1. 1</span></li>
+        <li class="solution-item"><span>2. 2</span></li>
+        <li class="solution-item" style="background: rgba(46, 125, 50, 0.2);"><span><strong>3.
+              3</strong></span> <span class="answer-badge answer-v">CORRETTA</span></li>
+        <li class="solution-item"><span>4. 6</span></li>
+      </ul>
+      <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+        <strong>Motivazione:</strong> A causa del meccanismo di
+        <em>Hoisting</em> in JavaScript, la dichiarazione `var b` all'interno
+        di `inner()` viene "sollevata" all'inizio della funzione. Quando `b++`
+        viene eseguito, `b` è locale ma ancora <em>undefined</em> (restituendo
+        NaN). Subito dopo viene assegnato `b=3`, quindi il `console.log(b)`
+        stamperà sempre 3.
+      </div>
+    </div>
+
+    <div class="question-block" id="qa1">
+      <h4 class="question-title">Domanda a Risposta Aperta: Descrivere il
+        codice HTML/JS</h4>
+      <p>Dato il codice HTML/Javascript descrivere sinteticamente il
+        significato... e una descrizione generica della pagina.</p>
+      <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+        <strong>Soluzione:</strong><br>
+        La pagina è un semplice modulo interattivo con controlli di
+        validazione lato client. <br><br>
+        - La funzione <code>check()</code> (richiamata all'onLoad del body)
+        verifica il browser dell'utente e mostra un alert se non è Internet
+        Explorer.<br>
+        - Lo script nel body stampa dinamicamente la data odierna formattata
+        come H2 (giorno/mese/anno).<br>
+        - La pagina contiene una Form che invia tramite metodo GET il testo
+        inserito a uno script server-side (elabora.tcl).<br>
+        - C'è un'immagine che, al passaggio del mouse (onmouseover), richiama
+        la funzione <code>pieno()</code>. Questa funzione controlla se l'input
+        di testo "x" è vuoto; se è vuoto, la negazione <code>!pieno()</code>
+        fa scattare un alert('Errore!').
+      </div>
+    </div>
+  </main>
+
+  <button id="back-to-top">↑</button>
+  <script src="script.js"></script>
+</body>
+
+</html>

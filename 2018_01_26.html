@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame 26 Gennaio 2018 - PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>26 Gennaio 2018</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande</h3>
+            <ul>
+                <li>→ <a href="#domanda-1">Domanda 1: Analisi Codice JavaScript (Scope)</a></li>
+                <li>→ <a href="#domanda-2">Domanda 2: Semantic markup in HTML5</a></li>
+                <li>→ <a href="#domanda-3">Domanda 3: Transizioni e Trasformazioni CSS3</a></li>
+                <li>→ <a href="#domanda-4">Domanda 4: Architetture REST</a></li>
+                <li>→ <a href="#domanda-aperta-1">Domanda Aperta 1: CSS e Box Model</a></li>
+                <li>→ <a href="#domanda-aperta-2">Domanda Aperta 2: HTML DOM</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JavaScript</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+<pre><code>&lt;script language="javascript"&gt;
+  var f1 = "Ferrari";
+  function funzionel (motogr) {
+    return f1 + " " + motogr;
+  }
+  function funzione2() {
+    var f1 = "Red Bull";
+    return funzionel ("Yamaha");
+  }
+  window.alert(funzione2());
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. funzione2 stampa "Ferrari Yamaha".</span></li>
+                <li class="solution-item"><span>2. funzione2 stampa "Red Bull Yamaha".</span></li>
+                <li class="solution-item"><span>3. funzione2 ritorna un errore.</span></li>
+            </ul>
+            <p><em>Motivare la risposta (max 3 righe):</em> (In JavaScript la funzione `funzionel` farà riferimento alla variabile globale `f1` valorizzata a "Ferrari" esistente al momento della sua definizione, ignorando la variabile locale `f1` "Red Bull" dichiarata dentro `funzione2`)</p>
+        </div>
+
+        <div class="question-block" id="domanda-2">
+            <h4 class="question-title">Domanda 2: Il semantic markup in HTML5</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Associa un significato al contenuto. [cite: 906-907]</span></li>
+                <li class="solution-item"><span>2. Rende una pagina web comprensibile sia all'uomo che alla macchina.</span></li>
+                <li class="solution-item"><span>3. Migliora l'usabilità per persone con disabilità.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-3">
+            <h4 class="question-title">Domanda 3: Si consideri il seguente codice CSS</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">CSS</div>
+<pre><code>div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s, height 2s, transform 2s;
+}
+div:hover {
+  width: 300px;
+  height: 300px;
+  transform: rotate (180deg);
+}</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Definisce un'animazione basata su CSS3.</span></li>
+                <li class="solution-item"><span>2. Al passare del mouse sopra l'elemento div, sposta l'elemento div verso destra.</span></li>
+                <li class="solution-item"><span>3. Al passare del mouse sopra l'elemento div, ingrandisce l'elemento div. [cite: 923-924]</span></li>
+                <li class="solution-item"><span>4. Al passare del mouse sopra l'elemento div, ruota l'elemento div di 180 gradi. [cite: 924-925]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-4">
+            <h4 class="question-title">Domanda 4: Nell'ambito delle architetture REST</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Il metodo PUT permette di creare risorse subordinate.</span></li>
+                <li class="solution-item"><span>2. Il metodo GET permette di ottenere lo stato di una risorsa. [cite: 926-928]</span></li>
+                <li class="solution-item"><span>3. Con il metodo POST il server decide il nome della risorsa creata. [cite: 928-929]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1</h4>
+            <p>Dopo aver descritto le caratteristiche principali e a cosa servono i fogli di stile CSS, mostrando la sintassi e un esempio di regola CSS, si discuta in dettaglio il CSS box model. [cite: 931-932]</p>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2</h4>
+            <p>Nell'ambito della programmazione web basata su HTML e JavaScript, si discuta in dettaglio il ruolo dell'HTML DOM. Si proponga inoltre un esempio del suo utilizzo. [cite: 933-935]</p>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

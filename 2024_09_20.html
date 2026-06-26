@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">20 Settembre 2024</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 20 Settembre 2024</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: JSON</a></li>
+                <li>→ <a href="#q2">Domanda 2: Selettori CSS</a></li>
+                <li>→ <a href="#q3">Domanda 3: Analisi Codice Eventi Mouse</a></li>
+                <li>→ <a href="#q4">Domanda 4: Architettura REST</a></li>
+                <li>→ <a href="#q5">Domanda 5: HTML</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta 1: CSS class e id</a></li>
+                <li>→ <a href="#qa2">Domanda Aperta 2: Struttura Pagina HTML</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: JSON</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È un dialetto XML</span> <span
+                        class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. È uno standard progettato per lo scambio di dati</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. È leggibile sia dalla macchina che dall'uomo</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. È indipendente dal linguaggio</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Un selettore di una regola CSS</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Può essere qualunque tag HTML</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Può riferirsi a una classe di tag</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Può avere un nome diverso da quello di un tag HTML</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Può essere definito nell'header della pagina HTML</span> <span
+                        class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTML / JS</div>
+                <pre><code>&lt;div align="center"&gt;
+&lt;img src="image.gif"/&gt;
+&lt;form name="module"&gt;
+&lt;input type="text" name="over" value="Che immagine vedi?" size="50px"&gt;
+&lt;/form&gt;
+&lt;a href="" onMouseOver="window.document.modulo.over.value='Elefante';" onmouseout="window.document.modulo.over.value='Che immagine vedi?'"&gt;scritta1&lt;/A&gt;&lt;BR&gt;&lt;BR&gt;
+&lt;a href="#" onMouseOver="window.document.modulo.over.value='Rana';" onmouseout="window.document.modulo.over.value='Che immagine vedi?'"&gt;scritta2&lt;/A&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Intercetta il passaggio del mouse sopra ai link contenuti nella
+                        pagina</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Non mostra mai la scritta 'Elefante'</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Mostra la scritta 'Rana' insieme alla scritta 'Elefante' quando il
+                        mouse passa velocemente da un link all'altro</span> <span
+                        class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Assegna unicamente uno di questi valori all'oggetto input: 'Elefante'
+                        oppure 'Rana'</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Un'applicazione REST è</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Stateful</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Modella le informazioni come risorse</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Distribuisce servizi con interfacce di accesso personalizzato
+                        sull'utente</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Gestisce sempre i dati tramite database NoSQL</span> <span
+                        class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: HTML</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. É un linguaggio di markup</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Stabilisce il contenuto e la formattazione di un sito web</span>
+                    <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Ha poche regole sintattiche</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Permette di implementare pagine web scambiate tramite il protocollo
+                        HTTP</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda Aperta 1: Ruolo di Class e ID in CSS</h4>
+            <p>Nell'ambito del linguaggio CSS si discutano in dettaglio il ruolo e le specifiche di class e id,
+                spiegandone l'utilizzo e presentando un esempio concreto.</p>
+            <div
+                style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                In CSS, `class` e `id` sono attributi utilizzati per selezionare e stilizzare elementi HTML, ma con
+                regole differenti.<br><br>
+                - L'<strong>ID</strong> è un identificatore univoco: può essere assegnato a un solo elemento nella
+                pagina (es. l'intestazione principale). Ha una priorità maggiore e nel CSS si richiama col prefisso
+                `#`.<br>
+                - La <strong>Class</strong> è riutilizzabile: può essere assegnata a molteplici elementi per condividere
+                lo stesso stile (es. dei bottoni o delle card). Nel CSS si richiama col prefisso `.`.<br><br>
+                <em>Esempio concreto:</em><br>
+                HTML:
+                <code>&lt;div id="navbar"&gt; &lt;button class="btn"&gt;Home&lt;/button&gt; &lt;/div&gt;</code><br>
+                CSS: <code>#navbar { background: black; }  .btn { color: red; }</code>
+            </div>
+        </div>
+
+        <div class="question-block" id="qa2">
+            <h4 class="question-title">Domanda Aperta 2: Scrivere un documento HTML</h4>
+            <p>Scrivere un documento HTML... Lo schermo è diviso in tre zone. Nella parte in alto, 6 immagini piccole.
+                Il click mostra la preview nella zona centrale. In basso un form di richiesta (Nome, Email, Indirizzo).
+            </p>
+            <div
+                style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                <div class="code-cube">
+                    <div class="code-cube-header">HTML</div>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Negozio&lt;/title&gt;
+  &lt;style&gt;
+    .top { display: flex; justify-content: center; gap: 10px; }
+    .mid { text-align: center; margin: 30px 0; }
+    .bottom { text-align: center; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Zona in Alto: Immagini --&gt;
+  &lt;div class="top"&gt;
+    &lt;img src="thumb1.jpg" width="50" onclick="document.getElementById('preview').src='img1.jpg'"&gt;
+    &lt;img src="thumb2.jpg" width="50" onclick="document.getElementById('preview').src='img2.jpg'"&gt;
+    &lt;!-- (ripetuto per altre 4 immagini) --&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Zona Centrale: Preview --&gt;
+  &lt;div class="mid"&gt;
+    &lt;img id="preview" src="default.jpg" width="300"&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Zona in Basso: Form --&gt;
+  &lt;div class="bottom"&gt;
+    &lt;form&gt;
+      Nome: &lt;input type="text" name="nome"&gt;&lt;br&gt;
+      Email: &lt;input type="email" name="email"&gt;&lt;br&gt;
+      Indirizzo: &lt;textarea name="indirizzo"&gt;&lt;/textarea&gt;&lt;br&gt;
+      &lt;input type="submit" value="Invia Richiesta"&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

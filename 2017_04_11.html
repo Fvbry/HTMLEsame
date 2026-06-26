@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame 11 Aprile 2017 - PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>11 Aprile 2017</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande</h3>
+            <ul>
+                <li>→ <a href="#domanda-1">Domanda 1: Web Service vs SOA</a></li>
+                <li>→ <a href="#domanda-2">Domanda 2: HTML DOM</a></li>
+                <li>→ <a href="#domanda-3">Domanda 3: XML Remote Procedure Call (XML-RPC)</a></li>
+                <li>→ <a href="#domanda-4">Domanda 4: Analisi Codice XML / JavaScript</a></li>
+                <li>→ <a href="#domanda-5">Domanda 5: Animazioni CSS3 (Traslazione)</a></li>
+                <li>→ <a href="#domanda-aperta">Domanda Aperta: CSS Box Model</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-1">
+            <h4 class="question-title">Domanda 1: Web Service vs Software-Oriented Architecture (SOA)</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Web service sono lo standard principale per realizzare SOA.</span></li>
+                <li class="solution-item"><span>2. SOA sono componenti loosely coupled.</span></li>
+                <li class="solution-item"><span>3. Web service è uno stile architetturale per implementare applicazioni software che usano servizi disponibili in rete.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-2">
+            <h4 class="question-title">Domanda 2: HTML DOM</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È uno standard che definisce la struttura di una pagina HTML.</span></li>
+                <li class="solution-item"><span>2. È usato da JavaScript per modificare gli elementi di una pagina HTML.</span></li>
+                <li class="solution-item"><span>3. Rappresenta una pagina HTML come un grafo ordinato aciclico.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-3">
+            <h4 class="question-title">Domanda 3: XML Remote Procedure Call (XML-RPC)</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Fornisce un protocollo di richiesta-risposta.</span></li>
+                <li class="solution-item"><span>2. Supporta tipi complessi come Array e Struct.</span></li>
+                <li class="solution-item"><span>3. È alla base dei Web Service REST.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-4">
+            <h4 class="question-title">Domanda 4: Si considerino i seguenti codici XML e JavaScript</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">XML</div>
+<pre><code>&lt;menu&gt;
+  &lt;menu&gt;
+    &lt;primi&gt;
+      &lt;primo&gt;lasagna vegana&lt;/primo&gt;
+      &lt;primo&gt;zuppa di fagioli&lt;/primo&gt;
+      &lt;primo&gt;risotto agli asparagi&lt;/primo&gt;
+    &lt;/primi&gt;
+    &lt;secondi&gt;
+      &lt;secondo&gt;verdure miste&lt;/secondo&gt;
+      &lt;secondo&gt;parmigiana&lt;/secondo&gt;
+      &lt;secondo&gt;pomodori ripieni&lt;/secondo&gt;
+    &lt;/secondi&gt;
+    &lt;dessert&gt;frutta&lt;/dessert&gt;
+  &lt;/menu&gt;
+  &lt;menu&gt;
+    &lt;primi&gt;
+      &lt;primo&gt;lasagna&lt;/primo&gt;
+      &lt;primo&gt;spaghetti allo scoglio&lt;/primo&gt;
+      &lt;primo&gt;risotto alla salsiccia&lt;/primo&gt;
+    &lt;/primi&gt;
+    &lt;secondi&gt;
+      &lt;secondo&gt;polpette&lt;/secondo&gt;
+      &lt;secondo&gt;bistecca alla milanese&lt;/secondo&gt;
+      &lt;secondo&gt;fiorentina&lt;/secondo&gt;
+    &lt;/secondi&gt;
+    &lt;dessert&gt;tiramisu&lt;/dessert&gt;
+  &lt;/menu&gt;
+&lt;/menu&gt;</code></pre>
+            </div>
+
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+<pre><code>&lt;script&gt;
+  xmlhttp=new XMLHttpRequest();
+  xmlhttp.open("GET", "menu.xml", false);
+  xmlhttp.send();
+  xmlDoc=xmlhttp.responseXML;
+  
+  xmlDocMenu=xmlDoc.getElementsByTagName("menu");
+  
+  document.write("&lt;div&gt;");
+  document.write(xmlDocMenu[1].getElementsByTagName("primo")[2].childNodes[0].nodeValue+"&lt;br&gt;");
+  document.write(xmlDocMenu[1].getElementsByTagName("secondo")[1].childNodes[0].nodeValue+"&lt;br&gt;");
+  document.write(xmlDoc.getElementsByTagName("menu")[0].getElementsByTagName("dessert")[0].childNodes[0].nodeValue+"&lt;br&gt;");
+  document.write("&lt;/div&gt;");
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. La funzione JavaScript stampa "risotto agli asparagi, parmigiana, frutta".</span></li>
+                <li class="solution-item"><span>2. La funzione JavaScript stampa "spaghetti allo scoglio, polpette, undefined".</span></li>
+                <li class="solution-item"><span>3. La funzione JavaScript stampa "risotto alla salsiccia, bistecca alla milanese, frutta".</span></li>
+            </ul>
+            <p><em>Motivare la risposta (max 3 righe):</em></p>
+        </div>
+
+        <div class="question-block" id="domanda-5">
+            <h4 class="question-title">Domanda 5: Si consideri il seguente codice CSS3</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">CSS</div>
+<pre><code>&lt;style&gt;
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0%   {background-color:red; left: 0px; top: 0px;}
+  50%  {background-color:blue; left: 200px; top:200px;}
+  100% {background-color: red; left: 0px; top: 0px;}
+}
+&lt;/style&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Qualsiasi elemento div viene traslato avanti e indietro unicamente lungo l'asse delle x.</span></li>
+                <li class="solution-item"><span>2. Solo il primo elemento div definito all'interno della pagina HTML cambia colore.</span></li>
+                <li class="solution-item"><span>3. L'animazione viene eseguita una volta sola per 4 secondi.</span></li>
+                <li class="solution-item"><span>4. L'elemento div non cambia dimensione.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-aperta">
+            <h4 class="question-title">Domanda a Risposta Aperta</h4>
+            <p>Dopo aver descritto le caratteristiche principali e a cosa servono i fogli di stile CSS, mostrando la sintassi e un esempio di regola CSS, si discuta in dettaglio il CSS box model.</p>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

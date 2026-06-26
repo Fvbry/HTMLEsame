@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame 25 Settembre 2018 - PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>25 Settembre 2018</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande</h3>
+            <ul>
+                <li>→ <a href="#domanda-1">Domanda 1: Analisi codice JSON</a></li>
+                <li>→ <a href="#domanda-2">Domanda 2: REST e operazione HTTP</a></li>
+                <li>→ <a href="#domanda-3">Domanda 3: XHTML</a></li>
+                <li>→ <a href="#domanda-4">Domanda 4: XML-RPC</a></li>
+                <li>→ <a href="#domanda-5">Domanda 5: In JavaScript</a></li>
+                <li>→ <a href="#domanda-aperta-1">Domanda Aperta 1: XMLHttpRequest</a></li>
+                <li>→ <a href="#domanda-aperta-2">Domanda Aperta 2: Modellazione XML vs JSON</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JSON</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">JSON</div>
+<pre><code>{
+  "car": [
+    {
+      "Name": "chevrolet chevelle malibu",
+      "Miles_per_Gallon": 18,
+      "Cylinders": 8,
+      "Displacement": 307,
+      "Horsepower": 130,
+      "Origin": "USA",
+      "Available": ["USA", "Europe"]
+    },
+    {
+      "Name": "toyota corona mark ii",
+      "Miles_per_Gallon": 24,
+      "Cylinders": 4,
+      "Displacement": 113,
+      "Horsepower": 95,
+      "Origin": "Japan",
+      "Available": ["Asia", "Europe"]
+    },
+    {
+      "Name": "mazda glc",
+      "Miles_per_Gallon": 46.6,
+      "Cylinders": 4,
+      "Displacement": 86,
+      "Horsepower": 65,
+      "Origin": "Japan",
+      "Available": ["Asia", "USA", "Europe"]
+    }
+  ]
+}</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Specifica quattro array diversi.</span></li>
+                <li class="solution-item"><span>2. Specifica solo valori di tipo stringa.</span></li>
+                <li class="solution-item"><span>3. Specifica ogni singola car come un array di sette elementi.</span></li>
+                <li class="solution-item"><span>4. Rispetta le regole sintattiche di JSON.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-2">
+            <h4 class="question-title">Domanda 2: Si consideri un'applicazione REST per l'aggiunta di un'automobile con il seguente codice</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">HTTP / JSON</div>
+<pre><code>HTTP_OPERATION URL
+{
+  "Name": "chevrolet chevelle malibu",
+  "Miles_per_Gallon": 18,
+  "Cylinders": 8,
+  "Displacement": 307,
+  "Horsepower": 130,
+  "Origin": "USA",
+  "Available": ["USA", "Europe"]
+}</code></pre>
+            </div>
+            
+            <p>N.B. Dopo l'operazione di aggiunta ogni macchina deve avere un id univoco.</p>
+            <p>Quale delle seguenti affermazioni è vera?</p>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. HTTP_OPERATION=POST e URL=/garage/{id}/car/{id}</span></li>
+                <li class="solution-item"><span>2. HTTP_OPERATION=PUT e URL=/garage/{id}/car/</span></li>
+                <li class="solution-item"><span>3. HTTP_OPERATION=POST e URL=/garage/{id}/car/</span></li>
+            </ul>
+            <p><em>Motivare la risposta (max 3 righe):</em></p>
+        </div>
+
+        <div class="question-block" id="domanda-3">
+            <h4 class="question-title">Domanda 3: XHTML</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È più stringente di HTML.</span></li>
+                <li class="solution-item"><span>2. Viene introdotto per ridurre il numero di pagine web con codice HTML errato.</span></li>
+                <li class="solution-item"><span>3. Combina HTML con XML.</span></li>
+                <li class="solution-item"><span>4. Ha regole sintattiche meno rigide di HTML.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-4">
+            <h4 class="question-title">Domanda 4: XML-RPC</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Sono gli antenati di SOAP e REST per lo sviluppo di applicazioni distribuite.</span></li>
+                <li class="solution-item"><span>2. Non forniscono funzionalità per una comunicazione sicura.</span></li>
+                <li class="solution-item"><span>3. Supportano i soli tipi complessi Array e Struct.</span></li>
+                <li class="solution-item"><span>4. Utilizzano un protocollo non standard per il trasporto.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-5">
+            <h4 class="question-title">Domanda 5: In JavaScript</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È possibile definire variabili con due scope: locale e globale.</span></li>
+                <li class="solution-item"><span>2. Non è possibile definire procedure.</span></li>
+                <li class="solution-item"><span>3. Le funzioni vengono chiamate fornendo la lista dei parametri attuali.</span></li>
+                <li class="solution-item"><span>4. L'accesso e la modifica di oggetti è permesso tramite proprietà e funzioni degli oggetti.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1</h4>
+            <p>Si discuta in dettaglio il ruolo dell'oggetto XMLHttpRequest presentando un esempio del suo utilizzo.</p>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2</h4>
+            <p>A partire dal codice JSON della Domanda 1, si discuta quali problematiche si potrebbero affrontare nella modellazione dello stesso file usando XML. Si confrontino inoltre brevemente vantaggi e svantaggi di una modellazione XML e una modellazione JSON.</p>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

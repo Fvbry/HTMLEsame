@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame 24 Febbraio 2017 - PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>24 Febbraio 2017</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande</h3>
+            <ul>
+                <li>→ <a href="#domanda-1">Domanda 1: Analisi Codice JavaScript (Scope)</a></li>
+                <li>→ <a href="#domanda-2">Domanda 2: Il selettore id di CSS</a></li>
+                <li>→ <a href="#domanda-3">Domanda 3: JSON notation</a></li>
+                <li>→ <a href="#domanda-4">Domanda 4: Chiamata REST (PUT)</a></li>
+                <li>→ <a href="#domanda-aperta-1">Domanda Aperta 1: XML vs JSON</a></li>
+                <li>→ <a href="#domanda-aperta-2">Domanda Aperta 2: Local Storage vs Session Storage</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JavaScript</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+<pre><code>&lt;script language="javascript"&gt;
+  var nome = "Claudio";
+  function fz1 (cognome) {
+    return nome + " " + cognome;
+  }
+  function fz2() {
+    var nome = "Denise";
+    return fz1("Ardagna");
+  }
+  window.alert(fz2());
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. fz2 stampa "Claudio Ardagna". [cite: 1224]</span></li>
+                <li class="solution-item"><span>2. fz2 stampa "Denise Ardagna". [cite: 1225]</span></li>
+                <li class="solution-item"><span>3. fz2 ritorna un errore. [cite: 1226]</span></li>
+            </ul>
+            <p><em>Motivare la risposta (max 3 righe):</em></p>
+        </div>
+
+        <div class="question-block" id="domanda-2">
+            <h4 class="question-title">Domanda 2: Il selettore id di CSS</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Identifica lo stile di un singolo elemento all'interno della pagina HTML. [cite: 1228-1229]</span></li>
+                <li class="solution-item"><span>2. Permette di scegliere il nome del selettore da un vocabolario fisso di parole. [cite: 1230]</span></li>
+                <li class="solution-item"><span>3. È definito in un file CSS tramite la sintassi "#nomeselettore". [cite: 1231]</span></li>
+                <li class="solution-item"><span>4. Può essere combinato con selettori class. [cite: 1231]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-3">
+            <h4 class="question-title">Domanda 3: JSON notation</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Viene gestito in JavaScript tramite le funzioni JSON.stringify e JSON.parse. [cite: 1232-1233]</span></li>
+                <li class="solution-item"><span>2. Permette di formattare strutture dati. [cite: 1234]</span></li>
+                <li class="solution-item"><span>3. È più leggera di XML. [cite: 1235]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-4">
+            <h4 class="question-title">Domanda 4: Si consideri la seguente chiamata REST</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">HTTP / XML</div>
+<pre><code>PUT/sondaggio/id_sondaggio/voto/7
+&lt;nome&gt;Claudio&lt;/nome&gt;
+&lt;nazione&gt;Italia&lt;/nazione&gt;
+&lt;opzione&gt;7&lt;/opzione&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Se il voto con id 7 non esiste lo crea. [cite: 1241]</span></li>
+                <li class="solution-item"><span>2. Se il voto con id 7 non esiste il risultato è equivalente al risultato ottenuto con un'operazione POST. [cite: 1242]</span></li>
+                <li class="solution-item"><span>3. Se il voto con id 7 esiste non ha alcun effetto. [cite: 1243]</span></li>
+                <li class="solution-item"><span>4. Se il voto con id 7 esiste il risultato è equivalente al risultato ottenuto con un'operazione POST. [cite: 1244-1245]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1</h4>
+            <p>Dopo aver descritto le caratteristiche del linguaggio XML nel dettaglio e presentato un esempio completo di file XML, si discutano le principali differenze con JSON. [cite: 1247-1248]</p>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2</h4>
+            <p>Si discutano in dettaglio local storage e session storage, presentando le principali differenze. [cite: 1249-1250]</p>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

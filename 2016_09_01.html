@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame 1 Settembre 2016 - PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>1 Settembre 2016</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande</h3>
+            <ul>
+                <li>→ <a href="#domanda-1">Domanda 1: Scelta formato Dati</a></li>
+                <li>→ <a href="#domanda-2">Domanda 2: L'oggetto XMLHttpRequest</a></li>
+                <li>→ <a href="#domanda-3">Domanda 3: Funzioni in JavaScript</a></li>
+                <li>→ <a href="#domanda-4">Domanda 4: Analisi Codice Eventi Mouse</a></li>
+                <li>→ <a href="#domanda-5">Domanda 5: Drag&Drop HTML5</a></li>
+                <li>→ <a href="#domanda-aperta-1">Domanda Aperta 1: Protocollo SOAP</a></li>
+                <li>→ <a href="#domanda-aperta-2">Domanda Aperta 2: Selettori class e id</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-1">
+            <h4 class="question-title">Domanda 1: Modellazione Dati</h4>
+            <p>Uno sviluppatore deve decidere come modellare i dati gestiti dalla sua applicazione web. Il suo obiettivo è di modellare i dati in maniera che siano facilmente interpretabili e che riducano il traffico da e verso l'applicazione web. [cite: 3070-3071]</p>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Lo sviluppatore modellerà i dati in formato JSON. [cite: 3072]</span></li>
+                <li class="solution-item"><span>2. Lo sviluppatore modellerà i dati in formato testuale. [cite: 3072]</span></li>
+                <li class="solution-item"><span>3. Lo sviluppatore modellerà i dati in formato XML. [cite: 3073]</span></li>
+            </ul>
+            <p><em>Motivare la risposta (max 3 righe):</em></p>
+        </div>
+
+        <div class="question-block" id="domanda-2">
+            <h4 class="question-title">Domanda 2: L'oggetto XMLHttpRequest</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È usato per scambiare dati in background con il server. [cite: 3076]</span></li>
+                <li class="solution-item"><span>2. Permette di scambiare solo dati in formato XML. [cite: 3077]</span></li>
+                <li class="solution-item"><span>3. Permette di ricevere dati dopo che la pagina è stata caricata. [cite: 3078]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-3">
+            <h4 class="question-title">Domanda 3: In Javascript, le funzioni</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Sono definite tramite la keyword function. [cite: 3080]</span></li>
+                <li class="solution-item"><span>2. Definiscono sia funzioni che procedure. [cite: 3081]</span></li>
+                <li class="solution-item"><span>3. Vengono chiamate fornendo la lista dei parametri attuali. [cite: 3082]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-4">
+            <h4 class="question-title">Domanda 4: Il seguente brano di codice</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">HTML / JS</div>
+<pre><code>&lt;div align="center"&gt;
+  &lt;form name="modulo"&gt;
+    &lt;input type="text" name="over" value="Where is the mouse?" size="50px"&gt;
+  &lt;/form&gt;
+  
+  &lt;a href="#" onMouseOver="window.document.modulo.over.value='Milan';"
+     onmouseout="window.document.modulo.over.value='Where is the mouse?'"&gt;scritta1&lt;/A&gt;
+  &lt;BR&gt;&lt;BR&gt;
+  
+  &lt;a href="#" onMouseOver="window.document.modulo.over.value='Crema';"
+     onmouseout="window.document.modulo.over.value='Where is the mouse?'"&gt;scritta2&lt;/A&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Intercetta il passaggio del mouse sopra ai link contenuti nella pagina. [cite: 3096]</span></li>
+                <li class="solution-item"><span>2. Non mostra mai la scritta 'Crema'. [cite: 3097]</span></li>
+                <li class="solution-item"><span>3. Mostra la scritta 'Where is the mouse? Milan'. [cite: 3098]</span></li>
+                <li class="solution-item"><span>4. Assegna uno di questi valori all'oggetto input: 'Where is the mouse?', 'Milan', oppure 'Crema'. [cite: 3099-3100]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-5">
+            <h4 class="question-title">Domanda 5: Il seguente brano di codice</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">HTML5 / JS</div>
+<pre><code>&lt;div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;img id="drag1" src="img.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69"&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Permette di trascinare un elemento img in un'altra posizione. [cite: 3105]</span></li>
+                <li class="solution-item"><span>2. Utilizza l'attributo draggable="true" per rendere l'elemento img non trascinabile. [cite: 3106]</span></li>
+                <li class="solution-item"><span>3. Utilizza l'attributo ondrop="drop(event)" per definire dove l'elemento può essere rilasciato. [cite: 3107-3108]</span></li>
+                <li class="solution-item"><span>4. Vieta di trascinare l'elemento img all'interno dell'elemento div. [cite: 3109]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1</h4>
+            <p>Si descriva il protocollo SOAP alla base dei SOAP Web Service. [cite: 3112]</p>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2</h4>
+            <p>Nell'ambito del linguaggio CSS, si descrivano in dettaglio le differenze tra i selettori class ed id e si proponga un esempio del loro utilizzo. [cite: 3114]</p>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

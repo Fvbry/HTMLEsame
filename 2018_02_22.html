@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame 22 Febbraio 2018 - PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>22 Febbraio 2018</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande</h3>
+            <ul>
+                <li>→ <a href="#domanda-1">Domanda 1: Analisi Codice (Visibility)</a></li>
+                <li>→ <a href="#domanda-2">Domanda 2: Regole CSS multiple</a></li>
+                <li>→ <a href="#domanda-3">Domanda 3: XML-RPC</a></li>
+                <li>→ <a href="#domanda-4">Domanda 4: HTML</a></li>
+                <li>→ <a href="#domanda-5">Domanda 5: Analisi JSON</a></li>
+                <li>→ <a href="#domanda-aperta">Domanda Aperta: Operazioni REST e Idempotenza</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice HTML/JavaScript</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">HTML / JS</div>
+<pre><code>&lt;div id="movies"&gt;
+  &lt;div style="margin:auto 0px"&gt;
+    &lt;h3 style="margin-left: 10px"&gt;MOVIES&lt;/h3&gt;
+    &lt;div class="style" id="movie_1"&gt;
+      &lt;div class="image"&gt;
+        &lt;span class="center-img"&gt;&lt;/span&gt;
+        &lt;img height="150px" src="static/img/doctorstrange.jpg"&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;br&gt;
+        &lt;h3&gt;Doctor Strange (2016)&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;1h 55m&lt;/li&gt;
+          &lt;li&gt;Action, Fantasy&lt;/li&gt;
+          &lt;li&gt;26 Ottobre 2016&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;&lt;button onclick="hide('movie_1')"&gt;hide 1&lt;/button&gt;&lt;/div&gt;
+    &lt;div class="movie" id="movie_2"&gt;[...]&lt;/div&gt;
+    &lt;div&gt;&lt;button onclick="hide('movie_2')"&gt;hide 2&lt;/button&gt;&lt;/div&gt;
+    &lt;div class="movie" id="movie_3"&gt;[...]&lt;/div&gt;
+    &lt;div&gt;&lt;button onclick="hide('movie_3')"&gt;hide 3&lt;/button&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+  function hide (div) {
+    if (elem.style.visibility=="hidden")
+      elem.style.visibility="visible";
+    else
+      elem.style.visibility="hidden";
+  }
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <p>Supponendo che l'utente preme sul pulsante "Hide 2", quali delle seguenti immagini rappresenta la visualizzazione esatta?</p>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. a</span></li>
+                <li class="solution-item"><span>2. b</span></li>
+                <li class="solution-item"><span>3. c.</span></li>
+            </ul>
+            <p><em>Motivare la risposta (max 3 righe):</em> (L'attributo visibility: hidden nasconde l'elemento ma lascia lo spazio che occupava originariamente nella pagina, a differenza di display: none)</p>
+        </div>
+
+        <div class="question-block" id="domanda-2">
+            <h4 class="question-title">Domanda 2: Quando diverse regole CSS si applicano a uno stesso elemento</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Viene applicata una valutazione a cascata per la risoluzione dei conflitti.</span></li>
+                <li class="solution-item"><span>2. Il primo ordinamento è fatto in base al peso e all'origine della specifica regola CSS.</span></li>
+                <li class="solution-item"><span>3. Priorità massima viene data alle regole definite dall'autore della pagina.</span></li>
+                <li class="solution-item"><span>4. Si considera sempre la regola più specifica.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-3">
+            <h4 class="question-title">Domanda 3: XML-RPC</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Forniscono un approccio per lo sviluppo di applicazioni distribuite.</span></li>
+                <li class="solution-item"><span>2. Forniscono tutte le funzionalità per una comunicazione sicura.</span></li>
+                <li class="solution-item"><span>3. Supportano i soli tipi complessi Array e Struct.</span></li>
+                <li class="solution-item"><span>4. Utilizzano il protocollo HTTP come mezzo di trasporto.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-4">
+            <h4 class="question-title">Domanda 4: HTML</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È un linguaggio di programmazione.</span></li>
+                <li class="solution-item"><span>2. Ha una sintassi più stringente di XHTML.</span></li>
+                <li class="solution-item"><span>3. Fornisce un layer semantico per la descrizione degli elementi.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-5">
+            <h4 class="question-title">Domanda 5: Si consideri il seguente brano di codice JSON</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">JSON</div>
+<pre><code>{
+  "team": [
+    {
+      "id": "001",
+      "name": "Cleveland Cavaliers",
+      "captain": "LeBron James",
+      "city": "Cleveland"
+    },
+    {
+      "id":"002",
+      "name": "Golden State Warriors",
+      "captain": "Stephen Curry",
+      "city": "Oakland"
+    }
+  ]
+}</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È in formato JSON.</span></li>
+                <li class="solution-item"><span>2. Specifica un array di team.</span></li>
+                <li class="solution-item"><span>3. Specifica un id di tipo intero.</span></li>
+                <li class="solution-item"><span>4. Specifica ogni singolo team come un array di quattro elementi di tipo stringa.</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-aperta">
+            <h4 class="question-title">Domanda a Risposta Aperta</h4>
+            <p>Si descrivano le HTTP operation alla base delle architetture REST, discutendo il concetto di idempotenza.</p>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

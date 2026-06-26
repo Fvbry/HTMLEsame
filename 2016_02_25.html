@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame
+        PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="page-header-title">Data Esame</h1><a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 25 Febbraio 2016</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: JS new Function</a></li>
+                <li>→ <a href="#q2">Domanda 2: Virtualizzazione</a></li>
+                <li>→ <a href="#q3">Domanda 3: Analisi CSS</a></li>
+                <li>→ <a href="#q4">Domanda 4: Browser</a></li>
+                <li>→ <a href="#q5">Domanda 5: XML / SOAP</a></li>
+                <li>→ <a href="#q6">Domanda 6: XML vs JSON</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: Web Storage</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: JavaScript</h4>
+            <p><code>alert(exec_f(new Function("x", "return x/2"), 14));</code></p>
+            <ul class="solution-list">
+                <li class="solution-item"><span>Risposta corretta: <strong>2. 7</strong></span></li>
+            </ul>
+            <p><strong>Motivazione:</strong> La funzione definita dinamicamente ritorna la metà dell'input. Passando 14,
+                il risultato è 7.</p>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Virtualizzazione nativa</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>Risposta corretta: <strong>4. L'hypervisor è direttamente installato
+                            sull'hardware</strong></span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Codice CSS</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>Risposta corretta: <strong>1. La proprietà padding definisce la distanza
+                            tra contenuto e bordo</strong></span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Browser</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>Risposta corretta: <strong>2. Interpreta pagine HTML</strong></span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: XML/SOAP</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>Risposta corretta: <strong>2. È parte di una richiesta
+                            SOAP</strong></span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q6">
+            <h4 class="question-title">Domanda 6: XML vs JSON</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>Risposta corretta: <strong>1. XML è usato per descrivere dati
+                            strutturati...</strong> (NOTA: il PDF originale suggeriva l'assenza di array, ma ricorda che
+                        XML usa tag ripetuti per gli array)</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda Aperta: Web Storage</h4>
+            <p><strong>Soluzione:</strong> Session Storage è limitato alla durata della sessione della scheda del
+                browser; Local Storage persiste indefinitamente finché non viene eliminato. Rispetto ai Cookie, entrambi
+                offrono maggiore capacità (MB vs KB) e non vengono inviati automaticamente a ogni richiesta HTTP al
+                server.</p>
+        </div>
+    </main><button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

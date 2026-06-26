@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame 13 Giugno 2019 - PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>13 Giugno 2019</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande</h3>
+            <ul>
+                <li>→ <a href="#domanda-1">Domanda 1: Accesso oggetti JavaScript</a></li>
+                <li>→ <a href="#domanda-2">Domanda 2: Chiamata REST (PUT)</a></li>
+                <li>→ <a href="#domanda-3">Domanda 3: Semantic markup in HTML5</a></li>
+                <li>→ <a href="#domanda-4">Domanda 4: Scope variabili JavaScript</a></li>
+                <li>→ <a href="#domanda-aperta">Domanda Aperta: Valutazione a cascata CSS</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-1">
+            <h4 class="question-title">Domanda 1: JavaScript permette accesso e modifica di oggetti tramite</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Oggetti basati su proprietà e funzioni. [cite: 344-345]</span></li>
+                <li class="solution-item"><span>2. Eventi scatenati da azioni degli utenti. [cite: 346]</span></li>
+                <li class="solution-item"><span>3. Formule booleane. [cite: 347]</span></li>
+                <li class="solution-item"><span>4. Funzioni HTML. [cite: 348]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-2">
+            <h4 class="question-title">Domanda 2: Si consideri la seguente chiamata REST</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">HTTP / XML</div>
+<pre><code>PUT/blog/blog_id/pub/5
+&lt;titolo&gt;A new assurance technique for the cloud&lt;/titolo&gt;
+&lt;autore&gt;Claudio Ardagna&lt;/autore&gt;
+&lt;corpo&gt;Description&lt;/corpo&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Se pub con id 5 non esiste, lo crea. [cite: 354]</span></li>
+                <li class="solution-item"><span>2. Se pub con id 5 non esiste, l'azione eseguita è la stessa che verrebbe eseguita con un'operazione POST. [cite: 355-356]</span></li>
+                <li class="solution-item"><span>3. Se pub con id 5 esiste, non ha alcun effetto. [cite: 357]</span></li>
+                <li class="solution-item"><span>4. Se pub con id 5 esiste, il risultato è equivalente al risultato ottenuto con un'operazione POST. [cite: 358]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-3">
+            <h4 class="question-title">Domanda 3: Il semantic markup in HTML5</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Associa un significato al contenuto. [cite: 359-360]</span></li>
+                <li class="solution-item"><span>2. Rende una pagina web comprensibile sia all'uomo che alla macchina. [cite: 361]</span></li>
+                <li class="solution-item"><span>3. Modifica la struttura di una pagina HTML. [cite: 362]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-4">
+            <h4 class="question-title">Domanda 4: Si consideri il seguente codice JavaScript</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+<pre><code>&lt;script type="text/javascript"&gt;
+  var stringa_globale = "Claudio";
+  function fz1 (stringa_locale) {
+    return stringa_locale + stringa_globale;
+  }
+  function fz2() {
+    stringa_globale = "Erika";
+    return fz1("Ciao ");
+  }
+  alert(fz2());
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. fz2 stampa "Ciao Claudio". [cite: 374]</span></li>
+                <li class="solution-item"><span>2. fz2 stampa "Ciao Erika". [cite: 375]</span></li>
+                <li class="solution-item"><span>3. fz2 ritorna un errore. [cite: 376]</span></li>
+            </ul>
+            <p><em>Motivare la risposta (max 3 righe):</em></p>
+        </div>
+
+        <div class="question-block" id="domanda-aperta">
+            <h4 class="question-title">Domanda a Risposta Aperta</h4>
+            <p>Nell'ambito del linguaggio CSS, si descrivano le regole di valutazione in cascata. [cite: 378-379]</p>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

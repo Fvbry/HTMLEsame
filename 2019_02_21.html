@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame 21 Febbraio 2019 - PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>21 Febbraio 2019</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande</h3>
+            <ul>
+                <li>→ <a href="#domanda-1">Domanda 1: Analisi Codice JavaScript (new Function)</a></li>
+                <li>→ <a href="#domanda-2">Domanda 2: Valutazione a cascata CSS</a></li>
+                <li>→ <a href="#domanda-3">Domanda 3: HTML DOM</a></li>
+                <li>→ <a href="#domanda-4">Domanda 4: I web service basati su SOAP</a></li>
+                <li>→ <a href="#domanda-5">Domanda 5: Analisi Animazione CSS3</a></li>
+                <li>→ <a href="#domanda-aperta-1">Domanda Aperta 1: Funzionalità HTML5</a></li>
+                <li>→ <a href="#domanda-aperta-2">Domanda Aperta 2: Operazioni POST e PUT</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JavaScript</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+<pre><code>function exec_f(f, x) {
+  return f(x);
+}
+alert(exec_f(new Function ("x", "return x+x/2"), 10));</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. La funzione alert mostra un errore. [cite: 438]</span></li>
+                <li class="solution-item"><span>2. La funzione alert mostra 15. [cite: 439]</span></li>
+                <li class="solution-item"><span>3. La funzione alert mostra 10. [cite: 440]</span></li>
+            </ul>
+            <p><em>Motivare la risposta (max 3 righe): [cite: 441]</em></p>
+        </div>
+
+        <div class="question-block" id="domanda-2">
+            <h4 class="question-title">Domanda 2: La valutazione a cascata delle regole CSS prevede che</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Il primo ordinamento sia fatto in base a peso e origine. [cite: 443]</span></li>
+                <li class="solution-item"><span>2. Selettori più specifici sovrascrivano selettori più generali. [cite: 444]</span></li>
+                <li class="solution-item"><span>3. Per dichiarazioni "importanti", gli stylesheet dell'autore della pagina sovrascrivano quelli dell'utente. [cite: 445]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-3">
+            <h4 class="question-title">Domanda 3: HTML DOM</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Rappresenta una pagina web come un grafo. [cite: 447]</span></li>
+                <li class="solution-item"><span>2. Viene usato per il parsing di documento XML. [cite: 448]</span></li>
+                <li class="solution-item"><span>3. Definisce gli elementi HTML come oggetti. [cite: 449]</span></li>
+                <li class="solution-item"><span>4. È un modo diverso di riferirsi a XHTML. [cite: 450]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-4">
+            <h4 class="question-title">Domanda 4: I web service basati su SOAP</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Implementano un paradigma client-server. [cite: 452]</span></li>
+                <li class="solution-item"><span>2. Sono indipendenti dalla piattaforma. [cite: 453]</span></li>
+                <li class="solution-item"><span>3. Sono componenti "strongly coupled". [cite: 454]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-5">
+            <h4 class="question-title">Domanda 5: Si consideri il seguente codice CSS3</h4>
+            
+            <div class="code-cube">
+                <div class="code-cube-header">CSS</div>
+<pre><code>&lt;style&gt;
+div {
+  position: relative;
+  background-color: blue;
+  width: 150px;
+  height: 300px;
+  animation-name: exam-trs;
+  animation-duration: 10s;
+}
+@keyframes exam-trs {
+  0%   {background-color: blue; left: 0px; top:0px;}
+  25%  {background-color: red; left: 0px; top:200px; height: 150px;}
+  50%  {background-color: green; left: 200px; top:200px;}
+  75%  {background-color: red; left: 200px; top:0px;}
+  100% {background-color: blue; left: 0px; top: 0px;}
+}
+&lt;/style&gt;</code></pre>
+            </div>
+
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Qualsiasi elemento div viene traslato in senso antiorario. [cite: 477]</span></li>
+                <li class="solution-item"><span>2. Solo il primo elemento div definito all'interno della pagina HTML cambia colore. [cite: 478-479]</span></li>
+                <li class="solution-item"><span>3. L'animazione viene eseguita una volta sola per 10 secondi. [cite: 480]</span></li>
+                <li class="solution-item"><span>4. L'elemento div non cambia dimensione. [cite: 481]</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1</h4>
+            <p>Si discutano nel dettaglio le principali funzionalità introdotte con l'avvento di HTML5. [cite: 483-484]</p>
+        </div>
+
+        <div class="question-block" id="domanda-aperta-2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2</h4>
+            <p>Nell'ambito delle architetture REST, si discutano le principali differenze tra le operazioni POST e PUT. Si presenti un esempio per ognuna delle operazioni. [cite: 486-487]</p>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

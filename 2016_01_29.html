@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame 29 Gennaio 2016 - PWM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">29 Gennaio 2016</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 29 Gennaio 2016</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Architetture REST</a></li>
+                <li>→ <a href="#q2">Domanda 2: Tag &lt;tr&gt; in HTML</a></li>
+                <li>→ <a href="#q3">Domanda 3: Direttiva CSS3 @keyframes</a></li>
+                <li>→ <a href="#q4">Domanda 4: HTML DOM</a></li>
+                <li>→ <a href="#q5">Domanda 5: Scope JavaScript</a></li>
+                <li>→ <a href="#q6">Domanda 6: Analisi JSON</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: CSS Box Model</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Architetture REST</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Il metodo POST permette di creare risorse subordinate</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Con il metodo PUT il server decide il nome della risorsa creata</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Il metodo GET permette di ottenere lo stato di una risorsa</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Tag &lt;tr&gt; in HTML</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Viene visualizzato come elenco puntato</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. È parte della definizione di una tabella</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Definisce tre paragrafi di testo</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Direttiva @keyframes di CSS3</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Specifica colore e gradienti del testo</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Permette di specificare delle animazioni</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. È esprimibile in maniera percentuale</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: HTML DOM</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Standard per modificare elementi HTML</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Usato da JavaScript per modificare la pagina</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Rappresenta una pagina come un albero</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Analisi Codice JS (Scope)</h4>
+            <div class="code-cube">
+                <pre><code>var globale = 5;
+function fz1(locale) { return locale + globale; }
+function fz2() { var globale = 30; return fz1(15); }</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>Risposta: 20</span> <span class="answer-badge answer-v">CORRETTA</span></li>
+            </ul>
+            <p><strong>Motivazione:</strong> JavaScript usa lo scope lessicale. La funzione <code>fz1</code> fa riferimento alla variabile <code>globale</code> definita nel suo ambiente (5), ignorando la variabile locale di <code>fz2</code>.</p>
+        </div>
+
+        <div class="question-block" id="q6">
+            <h4 class="question-title">Domanda 6: Analisi Brano JSON</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Array di quattro elementi</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Insieme non ordinato di quattro elementi</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda Aperta: CSS Box Model</h4>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50;">
+                <strong>Soluzione:</strong> Il Box Model è il modello che definisce lo spazio occupato da un elemento. Si compone di Content (il contenuto), Padding (spazio interno tra contenuto e bordo), Border (il bordo stesso) e Margin (spazio esterno). La larghezza totale calcolata include la somma di tutte queste parti.
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>
