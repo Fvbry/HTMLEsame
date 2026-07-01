@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 29 Gennaio 2016</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">29 Gennaio 2016</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 29 Gennaio 2016</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Architetture REST</a></li>
+                <li>→ <a href="#q2">Domanda 2: Codice HTML (Tabelle)</a></li>
+                <li>→ <a href="#q3">Domanda 3: La direttiva @keyframes di CSS3</a></li>
+                <li>→ <a href="#q4">Domanda 4: HTML DOM</a></li>
+                <li>→ <a href="#q5">Domanda 5: Analisi Codice JavaScript (Scope)</a></li>
+                <li>→ <a href="#q6">Domanda 6: Analisi brano JSON</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: Fogli di stile CSS e Box Model</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Nell'ambito delle architetture REST</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Il metodo POST permette di creare risorse subordinate.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Con il metodo PUT il server decide il nome della risorsa creata.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Il metodo GET permette di ottenere lo stato di una risorsa.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è vera: il POST si utilizza verso la URI di una collezione (es. `/utenti`) per creare una nuova risorsa subordinata al suo interno[cite: 1623]. La 2 è falsa perché con il metodo PUT è il <em>client</em> a definire l'URI specifico della risorsa da creare o aggiornare (es. `PUT /utenti/5`); è invece con il POST che il server decide autonomamente l'URI/nome della nuova risorsa[cite: 1624]. La 3 è vera: GET è un metodo sicuro usato solo per la lettura dello stato[cite: 1625].
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTML</div>
+                <pre><code>&lt;tr&gt;
+  &lt;td&gt;Mario&lt;/td&gt;
+  &lt;td&gt;Rossi&lt;/td&gt;
+  &lt;td&gt;Via Comelico&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Viene visualizzato come un elenco puntato non ordinato.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. È parte della definizione di una tabella.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Definisce tre paragrafi di testo.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Viene specificato nel tag head del documento HTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> I tag <code>&lt;tr&gt;</code> (Table Row) e <code>&lt;td&gt;</code> (Table Data) sono utilizzati esclusivamente per definire rispettivamente una riga e le relative celle all'interno di una tabella HTML (<code>&lt;table&gt;</code>)[cite: 1627, 1628, 1633]. Il contenuto visibile va obbligatoriamente nel <code>&lt;body&gt;</code>, mai nell'<code>&lt;head&gt;</code>[cite: 1635].
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: La direttiva @keyframes di CSS3</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Specifica colore e gradienti del testo di una pagina HTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Permette di specificare delle animazioni.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. È esprimibile in maniera percentuale.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La direttiva <code>@keyframes</code> è il costrutto fondamentale in CSS3 per definire lo sviluppo dei fotogrammi (keyframe) di un'animazione complessa[cite: 1636, 1638]. La sintassi prevede l'uso di percentuali (es. <code>0%</code>, <code>50%</code>, <code>100%</code>) per indicare lo stato dello stile in quel preciso istante del ciclo di animazione[cite: 1639].
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: HTML DOM</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È uno standard che definisce come ottenere, cambiare, aggiungere o modificare elementi HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. È usato da JavaScript per modificare gli elementi di una pagina HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Rappresenta una pagina HTML come un albero.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Ogni oggetto HTML DOM è composto solo di proprietà.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Le affermazioni 1, 2 e 3 descrivono perfettamente lo standard W3C del Document Object Model (DOM)[cite: 1640, 1641, 1642, 1644]. L'affermazione 4 è falsa perché gli oggetti nel DOM non possiedono solo <em>proprietà</em> (come <code>innerHTML</code>), ma espongono anche <em>metodi</em> (es. <code>appendChild()</code>) ed <em>eventi</em> (es. <code>onclick</code>) per interagire con essi[cite: 1645].
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Si consideri il seguente codice JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>var globale = 5;
+
+function fz1(locale) {
+  return locale + globale;
+}
+
+function fz2() {
+  var globale = 30;
+  return fz1(15);
+}
+
+alert(fz2());</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. fz2 stampa 45.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. fz2 stampa 20.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. fz2 ritorna un errore.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> A causa dello <em>scope lessicale</em> di JavaScript, la funzione <code>fz1</code> fa riferimento unicamente alla variabile <code>globale</code> presente nel suo stesso ambito di dichiarazione (quella esterna pari a 5)[cite: 1646]. Anche se <code>fz2</code> definisce internamente un'altra variabile <code>globale = 30</code>[cite: 1651], <code>fz1</code> la ignora. Il calcolo finale è quindi 15 (parametro locale) + 5 (variabile globale vera) = 20[cite: 1655].
+            </div>
+        </div>
+
+        <div class="question-block" id="q6">
+            <h4 class="question-title">Domanda 6: Si consideri il seguente brano JSON</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JSON</div>
+                <pre><code>{
+  "idEsame": "AWC",
+  "data": "29/01/2016",
+  "ora": "10",
+  "luogo": "Via Comelico"
+}</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Il codice proposto definisce un array di quattro elementi.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Il codice proposto definisce un insieme non ordinato di quattro elementi.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Il codice proposto definisce quattro stringhe.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché la struttura racchiusa da parentesi graffe <code>{}</code> definisce formalmente un <strong>Oggetto</strong> JSON, non un array (che richiede le parentesi quadre <code>[]</code>)[cite: 1659, 1665]. Secondo le specifiche ufficiali, un Oggetto JSON è proprio definito come una collezione (insieme) non ordinata di coppie chiave/valore: in questo caso ce ne sono esattamente quattro, rendendo la 2 vera[cite: 1666]. La 3 è imprecisa perché non si tratta di quattro "semplici stringhe", ma di quattro attributi strutturati in una gerarchia oggetto/proprietà[cite: 1667].
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta: Fogli di stile CSS e Box Model</h4>
+            <p>Dopo aver descritto le caratteristiche principali e a cosa servono i fogli di stile CSS, mostrando la sintassi e un esempio di regola CSS, si discuta in dettaglio il CSS box model.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                I fogli di stile CSS (Cascading Style Sheets) sono un linguaggio informatico utilizzato per definire e gestire la formattazione e l'aspetto visivo (design, layout, colori) dei documenti HTML[cite: 1669]. Il grande vantaggio dei CSS è la netta separazione tra il "contenuto/struttura" (HTML) e la "presentazione", garantendo una maggiore manutenibilità del codice web.<br><br>
+                <strong>Sintassi ed Esempio:</strong><br>
+                Una regola CSS si compone di un selettore e di un blocco di dichiarazioni racchiuso tra parentesi graffe. Ogni dichiarazione è una coppia <code>proprietà: valore;</code>.<br>
+                <em>Esempio:</em> <code>p { color: blue; text-align: center; }</code> (rende blu e centrato il testo di tutti i paragrafi).<br><br>
+                <strong>Il CSS Box Model:</strong><br>
+                Il Box Model (Modello a scatola) è il principio geometrico alla base del layouting sul web. Il browser elabora ogni singolo elemento HTML renderizzandolo come una scatola rettangolare composta da quattro strati concentrici (dall'interno verso l'esterno):<br>
+                1. <strong>Content:</strong> È il nucleo utile della scatola, in cui viene mostrato il testo o l'immagine. Le sue dimensioni si regolano tramite <code>width</code> e <code>height</code>.<br>
+                2. <strong>Padding:</strong> Un cuscinetto invisibile (trasparente) collocato attorno al Content. Genera uno spazio di "respiro" all'interno dei confini dell'elemento.<br>
+                3. <strong>Border:</strong> È il perimetro vero e proprio che racchiude Content e Padding. Può essere stilizzato rendendolo visibile (es. linea continua, tratteggiata, con spessore e colore).<br>
+                4. <strong>Margin:</strong> L'involucro più esterno e trasparente. Serve a generare una spaziatura fisica per allontanare la scatola in questione da tutti gli altri elementi HTML limitrofi, evitando che si sovrappongano.
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

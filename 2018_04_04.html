@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 4 Aprile 2018</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">4 Aprile 2018</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 4 Aprile 2018</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codice JavaScript (Web Storage e JSON)</a></li>
+                <li>→ <a href="#q2">Domanda 2: HTML5 - La funzionalità drag&drop</a></li>
+                <li>→ <a href="#q3">Domanda 3: JavaScript e Modifica Oggetti</a></li>
+                <li>→ <a href="#q4">Domanda 4: CSS3 - La regola @font-face</a></li>
+                <li>→ <a href="#q5">Domanda 5: Architettura REST (Operazione POST)</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: Caratteristiche XML e differenze con JSON</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>&lt;script type="text/javascript"&gt;
+var metadati = [
+  {"isbn":"isbn1", "prezzo": "20euro"},
+  {"isbn":"isbn2", "prezzo": "30euro"},
+  {"isbn":"isbn3", "prezzo": "15euro"},
+  {"isbn":"isbn4", "prezzo": "50euro"}
+];
+var libro = [
+  {"isbn":"isbn1", "edizione": 10, "titolo": "Anna Karenina", "autore": "Leo Tolstoy"},
+  {"isbn":"isbn2", "edizione": 3, "titolo": "Madame Bovary", "autore": "Gustave Flaubert"},
+  {"isbn":"isbn3", "edizione": 7, "titolo": "Hamlet", "autore": "William Shakespeare"},
+  {"isbn":"isbn4", "edizione": 5, "titolo": "Divina Commedia", "autore": "Dante Alighieri"}
+];
+
+localStorage.setItem("md", JSON.stringify(metadati));
+localStorage.setItem("book", JSON.stringify(libro));
+
+var chiave = localStorage.key(0);
+var tmp = JSON.parse(localStorage.getItem(chiave));
+
+for (i=0; i&lt;metadati.length; i++)
+  if (metadati[i].isbn == tmp[2].isbn)
+    alert(tmp[2].prezzo);
+&lt;/script&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. alert stampa 20euro</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. alert stampa 30euro</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. alert stampa 15euro</span> <span class="answer-badge answer-v">VERO (didatticamente)</span></li>
+                <li class="solution-item"><span>4. alert stampa undefined</span> <span class="answer-badge answer-v">VERO (tecnicamente)</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> Domanda trabocchetto! Nelle API Web Storage (<code>localStorage.key(0)</code>) l'ordine delle chiavi <strong>non è garantito</strong>. Se il browser le ordina alfabeticamente, "book" viene prima di "md", quindi <code>tmp</code> è `libro`. L'oggetto `libro` non ha la proprietà `prezzo`, rendendo l'output <strong>undefined (Opzione 4)</strong>. Se invece il docente ipotizza un ordine basato sull'inserimento (o se "md" finisce in posizione 0), <code>tmp</code> è `metadati`, il cui elemento all'indice 2 ("isbn3") ha prezzo <strong>"15euro" (Opzione 3)</strong>. Ti consiglio di tenere a mente la "3" per la logica dell'esercizio, ma l'effettivo output in molti browser è undefined.
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: La funzionalità drag&drop</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Permette di spostare qualsiasi elemento in un'altra posizione</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. È parte di HTML5</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Utilizza l'attributo draggable che con valore true rende un elemento trascinabile</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La funzionalità Drag and Drop è stata standardizzata in HTML5 e permette, tramite l'attributo nativo <code>draggable="true"</code>, di prendere praticamente qualsiasi elemento HTML della pagina (immagini, div, testo) e trascinarlo in specifiche zone definite come Drop Zone (gestendo gli eventi JS).
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: JavaScript permette accesso e modifica di oggetti tramite</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Oggetti basati su proprietà e funzioni</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Eventi scatenati da azioni degli utenti</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Formule booleane</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Funzioni HTML</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> In JavaScript gli oggetti vengono manipolati accedendo alle loro <em>proprietà</em> (es. `obj.colore`) o richiamando le loro <em>funzioni/metodi</em>. Tali modifiche avvengono quasi sempre in risposta ad <em>eventi</em> (es. click del mouse, caricamento). Le funzioni appartengono ai linguaggi di programmazione (JS), non all'HTML, che è un linguaggio di solo markup.
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: La regola @font-face</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Permette di includere solo alcuni tipi di carattere</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Definisce il set di caratteri da includere</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Permette di selezionare un solo set di caratteri per volta</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. È disponibile in CSS3</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché supporta innumerevoli formati di web font (TTF, OTF, WOFF, WOFF2). La 3 è falsa perché all'interno del foglio di stile CSS possono coesistere decine di regole <code>@font-face</code> diverse per caricare svariati font (es. un font per i titoli e uno per i paragrafi).
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Si consideri il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTTP / REST</div>
+                <pre><code>POST /book
+201 CREATED
+Location: /book/{id}</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È parte di una comunicazione verso un servizio SOAP</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Comporta la creazione di un nuovo book con id selezionato dal server</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Fornisce lo stesso risultato di una chiamata "PUT /book/{id}"</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Utilizza API fatte su misura per il caso specifico</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'uso dei metodi HTTP standard in combinazione con i codici di stato (come "201 CREATED") e gli Header HTTP ("Location") è il marchio di fabbrica di un'API <strong>RESTful</strong>, non SOAP (che userebbe XML). La 2 è vera: il metodo <code>POST</code> crea una nuova risorsa subordinata e delega al server il compito di deciderne l'URI/ID (ritornato poi nell'header). La 3 è falsa perché il metodo PUT, oltre a essere idempotente, richiederebbe che il client conoscesse e definisse l'ID in anticipo.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta: XML vs JSON</h4>
+            <p>Si descriva nel dettaglio le caratteristiche di XML, discutendo almeno uno scenario applicativo e le differenze con JSON.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                L'XML (eXtensible Markup Language) è un meta-linguaggio di marcatura progettato per descrivere e strutturare documenti di dati in formato testuale in modo che siano leggibili sia dalle macchine che dagli umani. Le sue <strong>caratteristiche principali</strong> sono la struttura gerarchica ad albero, l'uso di tag di apertura e chiusura personalizzabili dallo sviluppatore (es. <code>&lt;libro&gt;</code>), la possibilità di aggiungere metadati tramite gli attributi nei tag e l'estrema rigorosità (un file non ben formato blocca l'esecuzione).<br><br>
+                <strong>Scenario applicativo:</strong> L'XML è storicamente lo standard per lo scambio di messaggi complessi in ambito enterprise attraverso i <strong>Web Service SOAP</strong>, e viene impiegato massicciamente nei file di configurazione software (es. i file <code>pom.xml</code> di Maven o <code>web.xml</code> in Java EE).<br><br>
+                <strong>Differenze con JSON:</strong> JSON (JavaScript Object Notation) è un formato più moderno, notevolmente più leggero (meno verboso) perché privo dei continui tag di chiusura di XML. JSON supporta nativamente gli array (<code>[]</code>) e i tipi di dato nativi (numeri, booleani), cosa che XML non fa (in XML è tutto testo). Infine, JSON è integrato nativamente in JavaScript, rendendo il suo parsing in ambienti Web/Browser infinitamente più veloce rispetto alla scansione ad albero richiesta per il DOM XML.
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 29 Settembre 2016</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">29 Settembre 2016</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 29 Settembre 2016</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codice HTML/JavaScript (DOM)</a></li>
+                <li>→ <a href="#q2">Domanda 2: CSS box model</a></li>
+                <li>→ <a href="#q3">Domanda 3: In un RESTful Web Service</a></li>
+                <li>→ <a href="#q4">Domanda 4: Analisi Brano JSON (Insegnamenti)</a></li>
+                <li>→ <a href="#q5">Domanda 5: Il tag &lt;head&gt; di un documento HTML</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: Variabili in JavaScript (Scope e Dinamicità)</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice HTML/JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTML / JS</div>
+                <pre><code>&lt;h1 id="intro"&gt;Esame di AWC &lt;span id="myspan"&gt; (Appello di Settembre)&lt;/span&gt;&lt;/h1&gt;
+&lt;p id="para1"&gt;&lt;/p&gt;
+&lt;p id="para2"&gt;&lt;/p&gt;
+&lt;div id="div1"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  myText = document.getElementById("intro").firstChild.nodeValue;
+  document.getElementById("para1").innerHTML = "&lt;a href=link1.html&gt; Testo " + myText + "&lt;/a&gt;";
+  
+  myText = document.getElementById("myspan").childNodes[0].nodeValue;
+  document.getElementById("para2").innerHTML = "&lt;a href=link2.html&gt; Risultati " + myText + "&lt;/a&gt;";
+  
+  var para = document.createElement("p");
+  var node= document.createTextNode("Per visionare l'esame contattare il docente.");
+  para.appendChild(node);
+  
+  var element= document.getElementById("div1");
+  element.appendChild (para);
+&lt;/script&gt;</code></pre>
+            </div>
+            <p>Quali delle seguenti immagini rappresenta la visualizzazione esatta? (a, b o c?)</p>
+            <ul class="solution-list">
+                <li class="solution-item"><span>Risposta corretta: L'immagine <strong>(a)</strong> che riporta due link distinti ("Testo Esame di AWC" e "Risultati (Appello di Settembre)") e il paragrafo finale.</span> <span class="answer-badge answer-v">CORRETTA</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> 
+                Lo script preleva il `firstChild` del tag `< h1>` ("Esame di AWC ") e crea il primo link nel `para1`. Poi preleva il `childNodes[0]` dello `<span>` (" (Appello di Settembre)") e crea il secondo link in `para2`. Infine, crea un nuovo paragrafo col testo "Per visionare l'esame..." e lo appende in fondo al div `div1`.
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: CSS box model</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Racchiude i soli elementi di una form in un box.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Specifica margin, border, padding, content.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Il padding specifica uno spazio vuoto esterno al bordo della box.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Margin e padding sono trasparenti.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché il box model si applica a <em>tutti</em> gli elementi HTML, non solo alle form. La 3 è falsa perché lo spazio esterno al bordo è il <em>margin</em>; il <em>padding</em> è lo spazio interno tra il contenuto e il bordo. La 4 è vera: margin e padding non hanno colore proprio, ma sono aree trasparenti.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: In un RESTful Web Service</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Vengono definite funzioni tramite interfacce uniformi.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. La funzione GET può essere eseguita senza influenzare lo stato delle risorse.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. La funzione POST è un'operazione read-write.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché REST espone e modella <em>Risorse</em> (non "funzioni" come avviene in SOAP/RPC). La 2 è vera: il metodo GET è definito "safe" e "idempotente", serve solo a leggere lo stato senza alterarlo sul server. La 3 è falsa perché POST è tipicamente un'operazione di "write" per creare nuove risorse, non è formalmente definita come "read-write".
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JSON</div>
+                <pre><code>{
+  "insegnamento": [
+    {
+      "id":"001",
+      "docente": "Claudio Ardagna",
+      "titolo": "Applicazioni Web e Cloud",
+      "sede": "Milano, via Comelico"
+    },
+    {
+      "id": "002",
+      "docente": "Ernesto Damiani",
+      "titolo": "Architetture Software Orientate ai Servizi",
+      "sede": "Crema"
+    }
+  ]
+}</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È in formato XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Specifica un insieme di insegnamenti utilizzando una struttura dati a lista.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Specifica un id di tipo intero.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Specifica ogni singolo insegnamento come una lista di quattro elementi di tipo stringa.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa, è JSON. La 2 è vera perché <code>[]</code> definisce un array (o lista). La 3 è falsa perché l'id <code>"001"</code> è una stringa (ha le virgolette). La 4 è falsa perché ogni singolo insegnamento è definito da un Oggetto JSON (parentesi graffe <code>{}</code>) composto da coppie chiave/valore, e non da una semplice lista.
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Il tag &lt;head&gt; di un documento HTML</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Contiene informazioni/metadati relativi al documento HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Definisce il contenuto del documento HTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Contiene informazioni utilizzate dai motori di ricerca per indicizzare il documento HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Il tag <code>&lt;head&gt;</code> è il contenitore dei metadati della pagina (inclusi titoli, collegamenti a file CSS, e tag `<meta>` fondamentali per i motori di ricerca come Google). Il <em>contenuto</em> visibile della pagina è invece definito interamente nel tag <code>&lt;body&gt;</code>.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta: Variabili in JavaScript (Scope e Dinamicità)</h4>
+            <p>Si discutano in dettaglio le modalità di definizione e il trattamento delle variabili in JavaScript, soffermandosi in particolare sui concetti di scope e dinamicità.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                In JavaScript le variabili sono storicamente definite usando la keyword <code>var</code> (sebbene ES6 abbia introdotto anche <code>let</code> e <code>const</code>). <br><br>
+                <strong>Dinamicità (Loosely Typed):</strong> JavaScript è un linguaggio a tipizzazione debole e dinamica. Questo significa che, a differenza di linguaggi come Java o C++, non è necessario dichiarare il tipo della variabile (es. int, string) al momento della sua creazione. Il tipo viene assegnato a runtime in base al valore. Inoltre, la stessa variabile può cambiare il proprio tipo di dato durante l'esecuzione del programma senza restituire errori (es. <code>var x = 10; x = "Ciao";</code> è perfettamente valido).<br><br>
+                <strong>Scope (Ambito di visibilità):</strong> Lo scope definisce in quali parti del codice la variabile è accessibile. In JS esistono due scope principali legati alla dichiarazione <code>var</code>:<br>
+                1. <strong>Scope Globale:</strong> Una variabile dichiarata all'esterno di qualsiasi funzione diventa globale; può essere letta e modificata da qualsiasi altro blocco di codice o funzione all'interno del documento.<br>
+                2. <strong>Scope Locale (Function Scope):</strong> Una variabile dichiarata <em>all'interno</em> di una funzione è locale. Nasce all'avvio della funzione e viene distrutta al suo termine. Non è accessibile dall'esterno. Da notare che in JS (usando <code>var</code>) non esiste il "block scope" per i cicli <code>if</code> o <code>for</code>: una variabile dichiarata in un <code>if</code> è comunque accessibile in tutta la funzione in cui l'<code>if</code> è contenuto.
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 21 Febbraio 2019</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">21 Febbraio 2019</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 21 Febbraio 2019</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codice JavaScript (new Function)</a></li>
+                <li>→ <a href="#q2">Domanda 2: Regole CSS in cascata</a></li>
+                <li>→ <a href="#q3">Domanda 3: HTML DOM</a></li>
+                <li>→ <a href="#q4">Domanda 4: Web Service basati su SOAP</a></li>
+                <li>→ <a href="#q5">Domanda 5: Animazioni CSS3 (@keyframes)</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta 1: Novità introdotte da HTML5</a></li>
+                <li>→ <a href="#qa2">Domanda Aperta 2: POST vs PUT in REST</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>function exec_f(f, x) {
+  return f(x);
+}
+alert(exec_f(new Function ("x", "return x+x/2"), 10));</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. La funzione alert mostra un errore.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. La funzione alert mostra 15.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. La funzione alert mostra 10.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La sintassi <code>new Function("x", "return x+x/2")</code> genera dinamicamente una funzione anonima che prende un parametro <code>x</code> e ritorna <code>x + x/2</code>. Quando viene invocata tramite <code>exec_f</code> passando <code>10</code> come argomento, l'operazione eseguita è <code>10 + 10/2 = 10 + 5 = 15</code>. Quindi l'alert stamperà 15.
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: La valutazione a cascata delle regole CSS prevede che</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Il primo ordinamento sia fatto in base a peso e origine.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Selettori più specifici sovrascrivano selettori più generali.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Per dichiarazioni "importanti", gli stylesheet dell'autore della pagina sovrascrivano quelli dell'utente.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'opzione 3 è falsa perché, secondo le specifiche del W3C CSS2.1+, per questioni di accessibilità, le dichiarazioni segnate come <code>!important</code> dall'<strong>utente</strong> sovrascrivono sempre le dichiarazioni <code>!important</code> dell'<strong>autore</strong> del sito.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: HTML DOM</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Rappresenta una pagina web come un grafo.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Viene usato per il parsing di documento XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Definisce gli elementi HTML come oggetti.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. È un modo diverso di riferirsi a XHTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché il DOM rappresenta la pagina come un <em>Albero (Tree)</em>, non come un generico grafo. La 2 è falsa perché per l'XML si utilizza il DOM XML, mentre qui si parla specificamente di HTML DOM. La 4 non c'entra niente (XHTML è un linguaggio di markup XML-based, il DOM è un'API).
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: I web service basati su SOAP</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Implementano un paradigma client-server.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Sono indipendenti dalla piattaforma.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Sono componenti "strongly coupled".</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'affermazione 3 è falsa. L'architettura SOA (Software-Oriented Architecture) su cui si fonda tipicamente SOAP è stata pensata proprio per integrare sistemi distribuiti eterogenei promuovendo il disaccoppiamento (<em>loosely coupled</em>) tra fornitore del servizio e consumatore.
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Si consideri il seguente codice CSS3</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">CSS</div>
+                <pre><code>&lt;style&gt;
+div {
+  position: relative;
+  background-color: blue;
+  width: 150px;
+  height: 300px;
+  animation-name: exam-trs;
+  animation-duration: 10s;
+}
+@keyframes exam-trs {
+  0% {background-color: blue; left: 0px; top:0px;}
+  25% {background-color:red; left: 0px; top:200px; height: 150px;}
+  50% {background-color:green; left: 200px; top:200px;}
+  75% {background-color:red; left: 200px; top:0px;}
+  100% {background-color: blue; left: 0px; top: 0px;}
+}
+&lt;/style&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Qualsiasi elemento div viene traslato in senso antiorario.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Solo il primo elemento div definito all'interno della pagina HTML cambia colore.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. L'animazione viene eseguita una volta sola per 10 secondi.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. L'elemento div non cambia dimensione.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> 
+                <br>1. VERO: Il div parte da (0,0), va in basso a (0,200), poi a destra a (200,200), poi in alto a (200,0) e torna a (0,0). Questo definisce un movimento perimetrale quadrato in senso antiorario.
+                <br>2. FALSO: Il selettore <code>div</code> si applica a <em>tutti</em> i div della pagina.
+                <br>3. VERO: Non essendoci <code>animation-iteration-count</code> specificato, il valore di default è 1 (viene eseguita una volta sola per 10 secondi totali).
+                <br>4. FALSO: Al 25% dell'animazione la proprietà <code>height</code> cambia diventando 150px.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1: Novità di HTML5</h4>
+            <p>Si discutano nel dettaglio le principali funzionalità introdotte con l'avvento di HTML5.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                HTML5 ha rivoluzionato il Web introducendo potenti funzionalità che ne hanno aumentato sia la semantica che le capacità applicative lato client:<br>
+                - <strong>Tag Semantici:</strong> Introduzione di tag come <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, e <code>&lt;nav&gt;</code> che rendono il documento più leggibile per motori di ricerca e screen reader, a scapito dei classici e anonimi <code>&lt;div&gt;</code>.<br>
+                - <strong>Supporto Multimediale Nativo:</strong> I tag <code>&lt;audio&gt;</code> e <code>&lt;video&gt;</code> permettono di riprodurre flussi multimediali senza richiedere plugin esterni di terze parti come Adobe Flash.<br>
+                - <strong>Nuove API e Grafica:</strong> L'introduzione del tag <code>&lt;canvas&gt;</code> fornisce una superficie su cui JavaScript può disegnare grafica 2D e 3D in tempo reale. Sono state aggiunte anche API per la Geolocalizzazione, il Drag & Drop nativo e i Web Workers per il multithreading.<br>
+                - <strong>Web Storage:</strong> Un miglioramento radicale per la memorizzazione dei dati sul browser dell'utente (Session Storage e Local Storage) al fine di sostituire la gestione macchinosa e limitata dei classici cookie.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2: REST - POST vs PUT</h4>
+            <p>Nell'ambito delle architetture REST, si discutano le principali differenze tra le operazioni POST e PUT. Si presenti un esempio per ognuna delle operazioni.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Entrambi i metodi servono per inviare dati al server e manipolare risorse, ma presentano una differenza sostanziale legata all'<strong>idempotenza</strong> (la proprietà per cui eseguire l'operazione una o N volte produce lo stesso stato finale).<br><br>
+                - <strong>POST:</strong> Non è idempotente. Viene utilizzato per <em>creare</em> una nuova risorsa subordinata a un'altra. In questo caso è il server a determinare l'URI della nuova risorsa (assegnandole un ID). Ripetere la stessa POST più volte creerà risorse duplicate.<br>
+                <em>Esempio POST:</em> <code>POST /utenti</code> (invia i dati di un nuovo utente; il server lo creerà all'URI /utenti/101).<br><br>
+                - <strong>PUT:</strong> È idempotente. Viene utilizzato per <em>aggiornare</em> o <em>sostituire interamente</em> una risorsa già esistente fornendo una nuova rappresentazione. Può essere usato anche per creare una risorsa se il client è a conoscenza in anticipo dell'URI esatto (cioè decide lui l'ID). Ripetere la stessa PUT N volte sovrascrive semplicemente l'elemento con lo stesso stato.<br>
+                <em>Esempio PUT:</em> <code>PUT /utenti/101</code> (invia il profilo aggiornato dell'utente 101, che andrà a sovrascrivere i dati preesistenti in quell'URI).
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

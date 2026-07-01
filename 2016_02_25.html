@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 25 Febbraio 2016</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">25 Febbraio 2016</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 25 Febbraio 2016</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codice JavaScript (new Function)</a></li>
+                <li>→ <a href="#q2">Domanda 2: Virtualizzazione nativa</a></li>
+                <li>→ <a href="#q3">Domanda 3: Analisi Codice CSS (border-radius)</a></li>
+                <li>→ <a href="#q4">Domanda 4: Un browser</a></li>
+                <li>→ <a href="#q5">Domanda 5: Analisi brano XML (SOAP)</a></li>
+                <li>→ <a href="#q6">Domanda 6: XML vs JSON</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: Local storage e Session storage</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>function exec_f (f,x) {
+  return f(x);
+}
+alert(exec_f(new Function("x", "return x/2"), 14));</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. La funzione alert mostra un errore.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. La funzione alert mostra 7.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. La funzione alert mostra 14.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> 
+                Il costruttore <code>new Function("x", "return x/2")</code> genera dinamicamente una funzione anonima che accetta un parametro <code>x</code> e ne restituisce la metà. Quando viene invocata passandole il valore 14 tramite la funzione <code>exec_f</code>, l'operazione matematica eseguita è 14 diviso 2, che restituisce 7.
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Nella virtualizzazione nativa</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Si utilizza un unico sistema operativo.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Si ottengono prestazioni migliori.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. L'hypervisor è ospitato da un sistema operativo host.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. L'hypervisor è direttamente installato sull'hardware.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> 
+                La virtualizzazione nativa (o hypervisor di tipo 1 / bare-metal) prevede che l'hypervisor venga installato direttamente sull'hardware del server (la 4 è vera), senza la presenza di un sistema operativo host sottostante (la 3 è falsa). Questo permette di ospitare <em>molteplici</em> sistemi operativi guest (la 1 è falsa) con un overhead ridotto, garantendo prestazioni decisamente superiori rispetto agli hypervisor ospitati (la 2 è vera).
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">CSS</div>
+                <pre><code>#rcorners1 {
+  border-radius: 25px/100px 0px 0px 0px;
+  background: #8AC007;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. La proprietà padding definisce la distanza tra contenuto e bordo dell'elemento a cui viene applicato.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Può essere specificato all'interno di un file con estensione .css.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Definisce un selettore class.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Se applicato a un elemento HTML paragrafo, produce una box contenitore con 4 angoli uguali.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> 
+                La 3 è falsa perché il prefisso <code>#</code> identifica in CSS un selettore di <strong>id</strong>, non di classe (che userebbe il punto). La 4 è falsa perché la regola <code>border-radius</code> specificata ha valori diversi per i 4 angoli (solo il primo angolo in alto a sinistra è arrotondato in modo ellittico con <code>25px/100px</code>, gli altri 3 angoli sono a spigolo vivo a <code>0px</code>).
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Un browser</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È un programma per lo sviluppo di web service.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Interpreta pagine HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Permette di interagire con applicazioni web e cloud.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Un browser non serve a <em>sviluppare</em> web service (attività fatta tramite IDE o editor di codice e backend), ma è il client per eccellenza progettato per ricevere documenti web, interpretarne il markup (HTML) e gli script (JS), e permettere all'utente di interfacciarsi visivamente con i servizi cloud.
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Si consideri il seguente brano di codice XML</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">XML / SOAP</div>
+                <pre><code>&lt;env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope"&gt;
+  &lt;env:Body&gt;
+    &lt;m:getLastResult xmlns:m="http://example.org/result"&gt;
+      &lt;m:team&gt;Los Angeles Lakers&lt;/m:team&gt;
+    &lt;/m:getLastResult&gt;
+  &lt;/env:Body&gt;
+&lt;/env:Envelope&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È parte di una specifica di interfaccia WSDL.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. È parte di una richiesta SOAP.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Viene usato da un web service che definisce interfacce standard HTTP.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> I tag <code>Envelope</code> e <code>Body</code> sono i costrutti fondamentali per il payload di un messaggio SOAP (la 2 è vera). La 1 è falsa perché il WSDL serve a descrivere il contratto del servizio, non a comporre la singola richiesta con i dati reali ("Los Angeles Lakers"). La 3 è falsa perché un web service basato su SOAP definisce metodi personalizzati incapsulati nel body (come <code>getLastResult</code>) piuttosto che usare interfacce a risorse basate rigorosamente sui metodi standard HTTP (tipico invece del REST).
+            </div>
+        </div>
+
+        <div class="question-block" id="q6">
+            <h4 class="question-title">Domanda 6: XML vs JSON</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. XML è usato per descrivere dati strutturati che non includono array.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Il metodo eval di JavaScript fa il parsing di documenti XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. JSON è più verboso di XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è vera: il linguaggio XML nativamente non possiede il tipo di dato "Array" (si simula semplicemente ripetendo lo stesso tag più volte), mentre JSON sì. La 2 è falsa perché la storica e deprecata funzione <code>eval()</code> valuta stringhe come codice JavaScript (o JSON); per parsare XML in JS serve il <code>DOMParser</code>. La 3 è palesemente falsa poiché JSON, privo di tag di chiusura, è molto più leggero e meno verboso di XML.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta: Local storage e Session storage</h4>
+            <p>Si discutano in dettaglio local storage e session storage, presentando le loro principali differenze.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Local Storage e Session Storage costituiscono le due API fondamentali dello standard <strong>Web Storage</strong> introdotto da HTML5. Il loro scopo è permettere alle applicazioni web di memorizzare dati in locale sul browser dell'utente in un formato a coppie chiave/valore (Key-Value), in modo molto più efficiente e capiente rispetto ai tradizionali Cookie (i dati non vengono inviati automaticamente al server con ogni singola richiesta HTTP).<br><br>
+                <strong>Le principali differenze riguardano la durata (lifetime) e la visibilità:</strong><br>
+                - <strong>window.localStorage:</strong> Salva i dati in modo persistente e duraturo. Un dato salvato in local storage non possiede alcuna data di scadenza. Persiste anche se l'utente chiude completamente il browser, spegne il computer e riapre il sito giorni dopo. Può essere eliminato solo in maniera esplicita tramite codice JS (<code>localStorage.clear()</code> o <code>removeItem()</code>) oppure se l'utente svuota volontariamente i dati/cache del browser.<br>
+                - <strong>window.sessionStorage:</strong> Salva i dati in maniera volatile ed esclusivamente per la durata della singola sessione della pagina attiva. Se l'utente chiude la specifica scheda (tab) del browser o la singola finestra, i dati archiviati nel session storage per quell'origine vengono automaticamente e definitivamente cancellati. È ideale per salvare dati di input provvisori o per mantenere lo stato all'interno della navigazione di quel tab.
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

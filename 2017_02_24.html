@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 24 Febbraio 2017</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">24 Febbraio 2017</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 24 Febbraio 2017</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codice JavaScript (Scope)</a></li>
+                <li>→ <a href="#q2">Domanda 2: Il selettore id di CSS</a></li>
+                <li>→ <a href="#q3">Domanda 3: JSON notation</a></li>
+                <li>→ <a href="#q4">Domanda 4: Chiamata REST (Metodo PUT)</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta 1: Caratteristiche XML e differenze con JSON</a></li>
+                <li>→ <a href="#qa2">Domanda Aperta 2: Local storage vs Session storage</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>&lt;script language="javascript"&gt;
+var nome = "Claudio";
+function fz1 (cognome) {
+  return nome + " " + cognome;
+}
+function fz2() {
+  var nome = "Denise";
+  return fz1("Ardagna");
+}
+window.alert(fz2());
+&lt;/script&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. fz2 stampa "Claudio Ardagna".</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. fz2 stampa "Denise Ardagna".</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. fz2 ritorna un errore.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> In JavaScript vige lo <em>scope lessicale</em>. La funzione <code>fz1</code> fa riferimento alla variabile <code>nome</code> presente nel contesto in cui è stata dichiarata, ovvero la variabile globale "Claudio". Anche se <code>fz2</code> dichiara una variabile locale omonima ("Denise"), <code>fz1</code> la ignora e continua ad usare quella globale.
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Il selettore id di CSS</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Identifica lo stile di un singolo elemento all'interno della pagina HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Permette di scegliere il nome del selettore da un vocabolario fisso di parole.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. È definito in un file CSS tramite la sintassi "#nomeselettore".</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Può essere combinato con selettori class.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 2 è falsa perché i nomi degli ID (così come le classi) sono completamente arbitrari e decisi dallo sviluppatore. La 4 è vera: è perfettamente valido in CSS combinare un id e una classe per aumentare la specificità (es. <code>#mioHeader.active { color: red; }</code>, che colpirà l'elemento con quell'ID solo se possiede anche la classe active).
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: JSON notation</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Viene gestito in JavaScript tramite le funzioni JSON.stringify e JSON.parse.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Permette di formattare strutture dati.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. È più leggera di XML.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Tutte e tre le affermazioni sono corrette. JSON (JavaScript Object Notation) nasce appositamente per strutturare e scambiare dati (2) risultando molto meno verboso di XML non avendo la necessità di tag di chiusura (3). Il parsing e la serializzazione nativa in JS si effettuano rispettivamente con <code>JSON.parse()</code> e <code>JSON.stringify()</code> (1).
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Si consideri la seguente chiamata REST</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTTP / REST</div>
+                <pre><code>PUT /sondaggio/id_sondaggio/voto/7
+&lt;nome&gt;Claudio&lt;/nome&gt;
+&lt;nazione&gt;Italia&lt;/nazione&gt;
+&lt;opzione&gt;7&lt;/opzione&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Se il voto con id 7 non esiste lo crea.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Se il voto con id 7 non esiste il risultato è equivalente al risultato ottenuto con un'operazione POST.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Se il voto con id 7 esiste non ha alcun effetto.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Se il voto con id 7 esiste il risultato è equivalente al risultato ottenuto con un'operazione POST.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Il metodo <code>PUT</code> in un servizio REST può essere usato sia per creare una risorsa (se il client è autorizzato a stabilirne a priori l'URI, in questo caso ".../7") sia per aggiornarla (sovrascrivendola) nel caso esistesse già. L'affermazione 3 è quindi falsa perché, se esiste, il PUT ne sostituisce lo stato. La 4 è falsa perché un <code>POST</code> su una collezione pre-esistente generalmente ne crea un'altra nuova (non è idempotente) mentre il PUT è sempre idempotente.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1: XML vs JSON</h4>
+            <p>Dopo aver descritto le caratteristiche del linguaggio XML nel dettaglio e presentato un esempio completo di file XML, si discutano le principali differenze con JSON.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                L'XML (eXtensible Markup Language) è un metalinguaggio che permette di definire altri linguaggi di marcatura. Le sue caratteristiche principali sono l'estensibilità (lo sviluppatore crea i propri tag, es. <code>&lt;utente&gt;</code>), la strutturazione gerarchica ad albero, e la rigidità sintattica (ogni tag aperto deve essere chiuso, ci deve essere un solo elemento radice). È molto utilizzato nello scambio di messaggi aziendali e configurazioni.<br><br>
+                <strong>Esempio XML:</strong>
+                <div class="code-cube">
+                    <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;libreria&gt;
+  &lt;libro categoria="romanzo"&gt;
+    &lt;titolo&gt;1984&lt;/titolo&gt;
+    &lt;autore&gt;George Orwell&lt;/autore&gt;
+  &lt;/libro&gt;
+&lt;/libreria&gt;</code></pre>
+                </div><br>
+                <strong>Differenze principali con JSON:</strong><br>
+                - <strong>Verbosità:</strong> XML richiede tag di chiusura continui (es. <code>&lt;titolo&gt;...&lt;/titolo&gt;</code>) risultando molto più pesante da trasferire su rete rispetto a JSON, che usa solo parentesi graffe, quadre e virgolette (chiave-valore).<br>
+                - <strong>Tipi di dato:</strong> XML tratta tutto nativamente come stringa testuale, mentre JSON supporta in modo nativo numeri, booleani e soprattutto la struttura dati ad Array (<code>[]</code>).<br>
+                - <strong>Parsing:</strong> In ambiente Web, il parsing di JSON in oggetti Javascript è immediato (<code>JSON.parse</code>), mentre XML necessita di parser DOM dedicati che richiedono codice molto più complesso per l'attraversamento dei nodi.<br>
+                - <strong>Metadati:</strong> XML supporta gli <em>attributi</em> all'interno del tag di apertura per gestire metadati, cosa che in JSON non esiste in modo nativo (tutto è semplicemente proprietà dell'oggetto).
+            </div>
+        </div>
+
+        <div class="question-block" id="qa2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2: Web Storage</h4>
+            <p>Si discutano in dettaglio local storage e session storage, presentando le principali differenze.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Il <strong>Web Storage</strong> (definito comunemente in HTML5) fornisce API JavaScript per l'archiviazione di dati lato client sotto forma di coppie chiave/valore, superando i pesanti limiti di spazio e le inefficienze di rete imposti dai classici cookie.<br><br>
+                Si compone di due oggetti globali del browser:<br>
+                1. <strong>window.localStorage:</strong> Salva i dati in modo persistente. Questo significa che i dati archiviati qui non hanno alcuna data di scadenza. Se l'utente chiude il browser, spegne il computer e riapre il sito il giorno dopo, i dati (come preferenze di tema o carrelli salvati) saranno ancora lì disponibili.<br>
+                2. <strong>window.sessionStorage:</strong> Salva i dati in un'area di memoria legata strettamente alla singola sessione di navigazione della pagina. Se l'utente chiude quella specifica scheda (tab) o la finestra del browser, tutti i dati archiviati nel sessionStorage vengono immediatamente e permanentemente distrutti.<br><br>
+                <strong>Differenza principale:</strong> La durata o persistenza del ciclo di vita del dato (Lifetime). <em>SessionStorage</em> è volatile e muore con la chiusura del tab; <em>LocalStorage</em> è permanente e muore solo se cancellato esplicitamente via codice (<code>localStorage.removeItem()</code>) o se l'utente svuota la cache/memoria locale del proprio browser.
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

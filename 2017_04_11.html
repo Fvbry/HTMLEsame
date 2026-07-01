@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 11 Aprile 2017</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">11 Aprile 2017</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 11 Aprile 2017</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Web Service vs SOA</a></li>
+                <li>→ <a href="#q2">Domanda 2: HTML DOM</a></li>
+                <li>→ <a href="#q3">Domanda 3: XML Remote Procedure Call (XML-RPC)</a></li>
+                <li>→ <a href="#q4">Domanda 4: Analisi Codici XML e JavaScript (Parsing DOM)</a></li>
+                <li>→ <a href="#q5">Domanda 5: Analisi Codice CSS3 (@keyframes)</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: Fogli di stile CSS e Box Model</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Web Service vs Software-Oriented Architecture (SOA)</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Web service sono lo standard principale per realizzare SOA.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. SOA sono componenti loosely coupled.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Web service è uno stile architetturale per implementare applicazioni software che usano servizi disponibili in rete.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 3 è falsa perché "Web Service" non è uno stile architetturale, bensì una tecnologia/implementazione concreta (tramite SOAP o REST). Lo stile architetturale descritto (basato su servizi esposti in rete) è proprio <strong>SOA</strong> (Service-Oriented Architecture). L'affermazione 2 è vera: i servizi in SOA sono disaccoppiati (loosely coupled).
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: HTML DOM</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È uno standard che definisce la struttura di una pagina HTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. È usato da JavaScript per modificare gli elementi di una pagina HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Rappresenta una pagina HTML come un grafo ordinato aciclico.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è tecnicamente imprecisa (è l'HTML stesso a definire la struttura; il DOM è l'interfaccia/modello a oggetti per interagirci). La 3 è falsa: il DOM modella la pagina non come un Grafo Diretto Aciclico (DAG) generico, ma specificamente come un <strong>Albero (Tree)</strong> gerarchico (padre, figli, fratelli).
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: XML Remote Procedure Call (XML-RPC)</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Fornisce un protocollo di richiesta-risposta.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Supporta tipi complessi come Array e Struct.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. È alla base dei Web Service REST.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 3 è falsa in quanto XML-RPC (basato su chiamate remote a metodi) è il precursore e la base tecnologica del protocollo <strong>SOAP</strong>, non di REST (che è uno stile architetturale radicalmente diverso orientato alle risorse e non ai metodi).
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Si considerino i seguenti codici XML e JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">XML / JS</div>
+                <pre><code>&lt;menu&gt;
+  &lt;menu&gt;
+    &lt;primi&gt;
+      &lt;primo&gt;lasagna vegana&lt;/primo&gt;
+      &lt;primo&gt;zuppa di fagioli&lt;/primo&gt;
+      &lt;primo&gt;risotto agli asparagi&lt;/primo&gt;
+    &lt;/primi&gt;
+    &lt;secondi&gt;
+      &lt;secondo&gt;verdure miste&lt;/secondo&gt;
+      &lt;secondo&gt;parmigiana&lt;/secondo&gt;
+      &lt;secondo&gt;pomodori ripieni&lt;/secondo&gt;
+    &lt;/secondi&gt;
+    &lt;dessert&gt;frutta&lt;/dessert&gt;
+  &lt;/menu&gt;
+  &lt;menu&gt;
+    &lt;!-- Secondo menu interno (omesso per brevità: lasagna, spaghetti allo scoglio, ecc...) --&gt;
+    &lt;dessert&gt;tiramisu&lt;/dessert&gt;
+  &lt;/menu&gt;
+&lt;/menu&gt;
+
+&lt;script&gt;
+  // (Richiesta XMLHTTP omessa per brevità)
+  xmlDocMenu = xmlDoc.getElementsByTagName("menu");
+  
+  document.write("&lt;div&gt;");
+  // Stampa 1
+  document.write(xmlDocMenu[1].getElementsByTagName("primo")[2].childNodes[0].nodeValue + "&lt;br&gt;");
+  // Stampa 2
+  document.write(xmlDocMenu[1].getElementsByTagName("secondo")[1].childNodes[0].nodeValue + "&lt;br&gt;");
+  // Stampa 3
+  document.write(xmlDoc.getElementsByTagName("menu")[0].getElementsByTagName("dessert")[0].childNodes[0].nodeValue + "&lt;br&gt;");
+  document.write("&lt;/div&gt;");
+&lt;/script&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. La funzione JavaScript stampa "risotto agli asparagi, parmigiana, frutta".</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. La funzione JavaScript stampa "spaghetti allo scoglio, polpette, undefined".</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. La funzione JavaScript stampa "risotto alla salsiccia, bistecca alla milanese, frutta".</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (Trace del DOM XML):</strong> Il tag root è <code>&lt;menu&gt;</code>, che a sua volta contiene due tag <code>&lt;menu&gt;</code> figli. <code>getElementsByTagName("menu")</code> restituisce un array: l'indice [0] è la root, l'indice [1] è il primo menu figlio (vegano).<br>
+                - Stampa 1: Cerca il "primo" all'indice [2] nel menu [1] -> "risotto agli asparagi".<br>
+                - Stampa 2: Cerca il "secondo" all'indice [1] nel menu [1] -> "parmigiana".<br>
+                - Stampa 3: Cerca "dessert" all'indice [0] partendo dalla root (menu[0]). Il metodo esegue una ricerca in profondità e trova il primissimo dessert del documento -> "frutta".
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Si consideri il seguente codice CSS3</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">CSS</div>
+                <pre><code>&lt;style&gt;
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0% {background-color:red; left: 0px; top: 0px;}
+  50% {background-color:blue; left: 200px; top:200px;}
+  100% {background-color: red; left: 0px; top: 0px;}
+}
+&lt;/style&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Qualsiasi elemento div viene traslato avanti e indietro unicamente lungo l'asse delle x.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Solo il primo elemento div definito all'interno della pagina HTML cambia colore.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. L'animazione viene eseguita una volta sola per 4 secondi.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. L'elemento div non cambia dimensione.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché variano le coordinate di <code>left</code> (asse X) ma anche di <code>top</code> (asse Y), quindi il movimento è diagonale. La 2 è falsa: il selettore "div" si applica a <em>tutti</em> i div della pagina. La 3 è falsa per via della direttiva <code>animation-iteration-count: infinite</code> che ripete il loop all'infinito. La 4 è vera: l'animazione cambia posizione e colore, ma larghezza e altezza restano fisse a 100px.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta: Fogli di stile CSS e Box Model</h4>
+            <p>Dopo aver descritto le caratteristiche principali e a cosa servono i fogli di stile CSS, mostrando la sintassi e un esempio di regola CSS, si discuta in dettaglio il CSS box model.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                I CSS (Cascading Style Sheets) sono un linguaggio dedicato alla presentazione visiva dei documenti HTML. Il loro scopo principale è separare la formattazione (layout, colori, font) dalla struttura logica della pagina (HTML). Questo rende il codice più pulito, mantenibile e permette di applicare lo stesso stile a migliaia di pagine usando un solo file esterno (<code>.css</code>).<br><br>
+                <strong>Sintassi ed Esempio:</strong> Una regola CSS è composta da un <em>selettore</em> (che indica l'elemento da modificare) e un blocco di <em>dichiarazioni</em> racchiuse tra parentesi graffe.<br>
+                <code>h1 { color: red; font-size: 24px; }</code> (Imposta tutti i tag <code>&lt;h1&gt;</code> con testo rosso e grandezza 24px).<br><br>
+                <strong>CSS Box Model:</strong> È il modello di base utilizzato dai browser per disporre gli elementi in una pagina. Ogni elemento HTML è considerato come una "scatola" composta da 4 livelli concentrici:<br>
+                1. <strong>Content:</strong> L'area centrale effettiva in cui compare il testo o l'immagine (dimensione gestita da <code>width</code> e <code>height</code>).<br>
+                2. <strong>Padding:</strong> Un margine interno e trasparente che distanzia il Content dal bordo.<br>
+                3. <strong>Border:</strong> La linea visibile che chiude il Padding e il Content (si possono definirne spessore e colore).<br>
+                4. <strong>Margin:</strong> L'area esterna, anch'essa trasparente, che separa il "Box" in questione dagli altri elementi HTML circostanti. La dimensione totale visibile di un elemento sarà sempre data da: Width + Padding(L+R) + Border(L+R).
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

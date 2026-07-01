@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 31 Gennaio 2017</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">31 Gennaio 2017</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 31 Gennaio 2017</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codici XML e JavaScript (Città)</a></li>
+                <li>→ <a href="#q2">Domanda 2: Accesso al DOM tramite nodi JavaScript</a></li>
+                <li>→ <a href="#q3">Domanda 3: Il protocollo SOAP</a></li>
+                <li>→ <a href="#q4">Domanda 4: Analisi Codice CSS (Transition)</a></li>
+                <li>→ <a href="#q5">Domanda 5: HTML5 e Semantica</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: Architetture REST (POST vs PUT)</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente file XML</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">XML / JS</div>
+                <pre><code>&lt;cities&gt;
+  &lt;city&gt;
+    &lt;name&gt;Milan&lt;/name&gt;
+    &lt;country&gt;Italy&lt;/country&gt;
+  &lt;/city&gt;
+  &lt;city&gt;
+    &lt;name&gt;Paris&lt;/name&gt;
+    &lt;country&gt;France&lt;/country&gt;
+  &lt;/city&gt;
+  &lt;city&gt;
+    &lt;name&gt;New York&lt;/name&gt;
+    &lt;country&gt;USA&lt;/country&gt;
+  &lt;/city&gt;
+&lt;/cities&gt;</code></pre>
+            </div>
+            <p>Il seguente codice HTML:</p>
+            <div class="code-cube">
+                <pre><code>&lt;div&gt;
+  &lt;b&gt;City:&lt;/b&gt; &lt;span id="name"&gt;&lt;/span&gt;&lt;br&gt;
+  &lt;b&gt;Country:&lt;/b&gt; &lt;span id="country"&gt;&lt;/span&gt;&lt;br&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <p>E il seguente codice JavaScript:</p>
+            <div class="code-cube">
+                <pre><code>document.getElementById("name").innerHTML = xmlDoc.getElementsByTagName("country")[1].childNodes[0].nodeValue;
+document.getElementById("country").innerHTML = xmlDoc.getElementsByTagName("name")[2].childNodes[0].nodeValue;</code></pre>
+            </div>
+            <p>Quali delle seguenti risposte verrà visualizzata dalla pagina web?</p>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. "City: France" e "Country: New York".</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. "City: Italy" e "Country: New York".</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. "City: Italy" e "Country: Paris".</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> La prima istruzione prende l'elemento "country" di indice 1 (il secondo, ovvero "France") e lo inserisce nello span "name". La seconda istruzione prende l'elemento "name" di indice 2 (il terzo, ovvero "New York") e lo inserisce nello span "country". L'output risultante è "City: France" e "Country: New York".
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Nella modalità di accesso a pagine Web tramite nodi di JavaScript</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Tutti gli elementi di una pagina, inclusi testo e attributi, sono modellati come nodi.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. È possibile aggiungere, modificare e rimuovere qualsiasi nodo.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Tutti i nodi eccetto la root hanno un solo padre.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. È possibile manipolare la pagina tramite funzioni quali getElementById.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Tutte le affermazioni descrivono correttamente le proprietà fondamentali del Document Object Model (DOM), che rappresenta il documento come un albero gerarchico manipolabile via JavaScript.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Il protocollo SOAP</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Definisce il formato generale di un messaggio e come processarlo.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Si basa sullo scambio di messaggi composti di un'unica sezione body.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. È un protocollo basato su JSON.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 2 è falsa perché un messaggio SOAP è composto da un <em>Envelope</em> che racchiude un <em>Body</em> e, opzionalmente, un <em>Header</em>. La 3 è falsa perché SOAP è un protocollo basato rigidamente ed esclusivamente su XML, non su JSON.
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Si consideri il seguente codice CSS</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">CSS</div>
+                <pre><code>div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s, height 2s;
+}
+div:hover {
+  width: 300px;
+  height: 300px;
+  background: blue;
+}</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È un brano di codice CSS3.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Applica una trasformazione al background degli elementi div.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Applica una trasformazione quando avviene un click del mouse sull'elemento div.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Definisce una trasformazione completa in 4 secondi.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> 
+                <br>La 1 è vera (<code>transition</code> è una proprietà di CSS3). 
+                <br>La 2 è falsa: il colore cambia, ma a scatto, perché non c'è una transizione dichiarata per il <code>background</code> (solo per width/height), e soprattutto non viene usata la direttiva CSS <code>transform</code>.
+                <br>La 3 è falsa: <code>:hover</code> si attiva al semplice passaggio del mouse, non al click (per il click sarebbe <code>:active</code>).
+                <br>La 4 è falsa: le due transizioni partono simultaneamente e durano 2 secondi in totale (non la somma 2+2).
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: HTML5</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Riduce l'utilizzo degli elementi div nella strutturazione della pagina.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Mantiene i controlli sintattici stringenti propri di XHTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Aggiunge un livello semantico alla pagina web.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> HTML5 ha introdotto tag semantici (come <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>) che riducono la necessità di usare div annidati, fornendo così un maggiore livello semantico (vero 1 e 3). La 2 è falsa perché HTML5 ha allentato molte regole rigide di XHTML (es. chiusura obbligatoria, tag in minuscolo), rendendo la sintassi molto più permissiva.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta: Architetture REST (POST vs PUT)</h4>
+            <p>Nell'ambito delle architetture REST, si discutano le principali differenze tra le operazioni POST e PUT.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Le operazioni POST e PUT sono due dei metodi HTTP fondamentali nelle architetture RESTful, impiegati per inviare dati al server, ma si comportano in modo molto diverso, soprattutto rispetto al concetto di <strong>idempotenza</strong>.<br><br>
+                - <strong>POST (Creazione Subordinata):</strong> Il metodo POST <em>non è idempotente</em>. Viene impiegato per creare una nuova risorsa all'interno di una collezione (es. inviando dati a <code>/utenti/</code>). È il server a generare un ID univoco per la risorsa e a restituire l'URI finale al client (es. `201 Created` con `Location: /utenti/7`). Se un client esegue tre volte la stessa operazione POST, verranno create tre risorse distinte e duplicate.<br><br>
+                - <strong>PUT (Sostituzione/Creazione Fissa):</strong> Il metodo PUT <em>è idempotente</em>. Viene impiegato per aggiornare (sovrascrivere interamente) una risorsa preesistente presso un URI specifico, oppure per crearla nel caso il client sia a conoscenza a priori dell'ID/URI finale (es. <code>PUT /utenti/7</code>). Dato che è idempotente, se la stessa richiesta PUT viene inviata più volte, lo stato del server non subirà variazioni successive, ma rimarrà lo stesso della prima esecuzione (i dati verranno semplicemente rimpiazzati con se stessi).
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

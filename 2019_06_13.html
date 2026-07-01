@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 13 Giugno 2019</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">13 Giugno 2019</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 13 Giugno 2019</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Accesso e modifica oggetti in JS</a></li>
+                <li>→ <a href="#q2">Domanda 2: Chiamata REST (PUT)</a></li>
+                <li>→ <a href="#q3">Domanda 3: Semantic markup in HTML5</a></li>
+                <li>→ <a href="#q4">Domanda 4: Analisi Codice JavaScript (Scope)</a></li>
+                <li>→ <a href="#qa1">Domanda a risposta aperta: Regole CSS in cascata</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: JavaScript permette accesso e modifica di oggetti tramite</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Oggetti basati su proprietà e funzioni.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Eventi scatenati da azioni degli utenti.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Formule booleane.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Funzioni HTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> In JavaScript gli oggetti sono manipolati tramite le loro proprietà e metodi (funzioni). Inoltre, le interazioni avvengono spessissimo tramite eventi del DOM (es. onClick) che scatenano script per modificare gli oggetti. Le opzioni 3 e 4 non hanno senso nel contesto del DOM/JS (l'HTML non ha funzioni).
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Si consideri la seguente chiamata REST</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTTP / XML</div>
+                <pre><code>PUT/blog/blog_id/pub/5
+&lt;titolo&gt;A new assurance technique for the cloud&lt;/titolo&gt;
+&lt;autore&gt;Claudio Ardagna&lt;/autore&gt;
+&lt;corpo&gt;Description&lt;/corpo&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Se pub con id 5 non esiste, lo crea.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Se pub con id 5 non esiste, l'azione eseguita è la stessa che verrebbe eseguita con un'operazione POST.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Se pub con id 5 esiste, non ha alcun effetto.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Se pub con id 5 esiste, il risultato è equivalente al risultato ottenuto con un'operazione POST.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'operazione <code>PUT</code> è idempotente. Se la risorsa puntata dall'URI (id 5) non esiste, il server può crearla (comportandosi come una POST per la creazione, sebbene l'ID sia imposto dal client). Se esiste, il comando <code>PUT</code> la aggiorna/sostituisce (quindi la 3 è falsa). La 4 è falsa perché un POST su una risorsa esistente tipicamente crea una nuova sottomaschera, non la sostituisce.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Il semantic markup in HTML5</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Associa un significato al contenuto.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Rende una pagina web comprensibile sia all'uomo che alla macchina.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Modifica la struttura di una pagina HTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Il markup semantico di HTML5 (es. tag come <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>) non altera visivamente o gerarchicamente la struttura base della pagina in modo diverso da un <code>&lt;div&gt;</code>, ma fornisce metadati e significato ("meaning") a quel blocco di contenuto, rendendolo analizzabile da browser e crawler (macchine).
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Si consideri il seguente codice JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>&lt;script type="text/javascript"&gt;
+var stringa_globale = "Claudio";
+
+function fz1 (stringa_locale) {
+  return stringa_locale + stringa_globale;
+}
+
+function fz2() {
+  stringa_globale = "Erika";
+  return fz1("Ciao ");
+}
+
+alert(fz2());
+&lt;/script&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. fz2 stampa "Ciao Claudio".</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. fz2 stampa "Ciao Erika".</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. fz2 ritorna un errore.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> 
+                Nella funzione <code>fz2</code>, la variabile <code>stringa_globale</code> viene modificata riassegnandole il valore "Erika". Poiché non viene usata la parola chiave <code>var</code>, viene sovrascritta la variabile nello scope globale. Quando <code>fz1</code> viene richiamata, concatena "Ciao " con il nuovo valore globale, ritornando "Ciao Erika".
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a risposta aperta: Regole CSS in cascata</h4>
+            <p>Nell'ambito del linguaggio CSS, si descrivano le regole di valutazione in cascata.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                La "cascata" (Cascade) è l'algoritmo usato dal browser per risolvere i conflitti quando più regole CSS si applicano allo stesso elemento HTML. Le regole di valutazione seguono un ordine di priorità ben preciso:<br>
+                1. <strong>Importanza e Origine:</strong> Hanno priorità assoluta le regole con <code>!important</code>. In secondo luogo si valuta l'origine (le dichiarazioni dell'autore della pagina vincono su quelle di default del browser/user agent).<br>
+                2. <strong>Specificità (Specificity):</strong> Se due regole hanno la stessa origine, vince il selettore più specifico. La specificità si calcola assegnando pesi: lo stile inline vince sugli ID, gli ID vincono sulle Classi/Pseudo-classi, e le Classi vincono sui semplici Tag HTML.<br>
+                3. <strong>Ordine sorgente (Source Order):</strong> A parità di importanza e specificità, viene applicata l'ultima regola dichiarata in ordine cronologico nel codice (l'ultima letta sovrascrive le precedenti).
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

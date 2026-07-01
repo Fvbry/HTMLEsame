@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 25 Settembre 2017</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">25 Settembre 2017</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 25 Settembre 2017</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codice HTML/JavaScript (Pizzeria DOM)</a></li>
+                <li>→ <a href="#q2">Domanda 2: Analisi brano XML (SOAP)</a></li>
+                <li>→ <a href="#q3">Domanda 3: In un RESTful Web Service (Idempotenza)</a></li>
+                <li>→ <a href="#q4">Domanda 4: XML vs JSON</a></li>
+                <li>→ <a href="#q5">Domanda 5: I fogli di stile CSS</a></li>
+                <li>→ <a href="#q6">Domanda 6: HTML vs XHTML</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: CSS3 e Media Rule</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice HTML/JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTML / JS</div>
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+  &lt;h1 id="pizzeria"&gt;Pizzeria AWC&lt;/h1&gt;
+  &lt;h3 id="ing"&gt;Ingredienti&lt;/h3&gt;
+  &lt;p id="pizza"&gt; Pizza Margherita &lt;span id="q1"&gt;Baby&lt;/span&gt; &lt;/p&gt;
+  &lt;p id="ing1"&gt; Mozzarella &lt;span id="q1"&gt;300g&lt;/span&gt;&lt;/p&gt;
+  &lt;p id="ing2"&gt; Salsa di pomodoro &lt;span id="q2"&gt;200g&lt;/span&gt;&lt;/p&gt;
+  &lt;p id="ing3"&gt; Pasta per pizza &lt;span id="q3"&gt;400g&lt;/span&gt;&lt;/p&gt;
+  &lt;h3 id="preparazione"&gt;Preparazione&lt;/h3&gt;
+  &lt;div id="ricetta"&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    myText = document.getElementById("pizza").childNodes[1].childNodes[0].nodeValue;
+    
+    var para = document.createElement("p");
+    var node = document.createTextNode("Preparazione per la pizza " + myText);
+    para.appendChild(node);
+    
+    var element = document.getElementById("preparazione");
+    element.innerHTML = para.childNodes[0].nodeValue;
+    
+    // NOTA: Si assume getElementsByTagName("p") altrimenti il codice successivo fallirebbe
+    myText2 = document.getElementsByTagName("p"); 
+    
+    var para = document.createElement("p");
+    var node = document.createTextNode("Stendi la " + myText2[1].childNodes[0].nodeValue);
+    para.appendChild(node);
+    
+    var node = document.createTextNode("Aggiungi " + myText2[2].childNodes[1].childNodes[0].nodeValue + " di " + myText2[2].childNodes[0].nodeValue);
+    para.appendChild(node);
+    
+    var node = document.createTextNode("Ottieni una pizza " + myText2[0].childNodes[0].nodeValue);
+    para.appendChild(node);
+    
+    var element = document.getElementById("ricetta");
+    element.appendChild(para);
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <p>Quali delle seguenti immagini rappresenta la visualizzazione esatta? (a, b o c?)</p>
+            <ul class="solution-list">
+                <li class="solution-item"><span>Risposta corretta: <strong>1. a</strong> (L'immagine che riporta: "Stendi la Mozzarella Aggiungi 200g di Salsa di pomodoro Ottieni una pizza Pizza Margherita")</span> <span class="answer-badge answer-v">CORRETTA</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (Analisi del DOM):</strong> 
+                <br>1. <code>myText</code> estrae la stringa "Baby" dal tag span interno al paragrafo con id "pizza". La scritta "Preparazione" viene quindi sovrascritta con "Preparazione per la pizza Baby".
+                <br>2. Viene creato un nuovo paragrafo <code>para</code> per la ricetta.
+                <br>3. <code>myText2[1].childNodes[0].nodeValue</code> accede al testo del secondo paragrafo (" Mozzarella "). -> "Stendi la Mozzarella".
+                <br>4. <code>myText2[2]</code> accede a "Salsa di pomodoro" (childNodes[0]) e al suo span "200g" (childNodes[1]). -> "Aggiungi 200g di Salsa di pomodoro".
+                <br>5. <code>myText2[0].childNodes[0].nodeValue</code> accede al primo testo di "pizza": " Pizza Margherita ". -> "Ottieni una pizza Pizza Margherita".
+                <br><em>L'immagine "a" è l'unica che concatena correttamente i testi.</em>
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Si consideri il seguente brano di codice XML</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">XML / SOAP</div>
+                <pre><code>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope/" soap:encodingStyle="..."&gt;
+  &lt;soap:Body&gt;
+    &lt;m:GetPrice xmlns:m="https://www.awc.com/prices"&gt;
+      &lt;m:Item&gt;One Plus 5&lt;/m:Item&gt;
+    &lt;/m:GetPrice&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È parte di una specifica di interfaccia WSDL.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. È parte di una richiesta SOAP.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Viene usato da un web service che definisce interfacce standard HTTP.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Il codice mostra chiaramente la struttura "Envelope" e "Body", tipica del payload di un messaggio SOAP. La 1 è falsa perché WSDL descrive l'interfaccia (il contratto), non il payload della singola chiamata. La 3 è falsa perché i servizi SOAP non usano interfacce standard HTTP (come REST che usa GET, PUT, POST), ma definiscono operazioni (metodi) custom (es. <code>GetPrice</code>) nascoste all'interno del Body XML.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: In un RESTful Web Service</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Le risorse vengono identificate attraverso file XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Le risorse vengono accedute attraverso un'interfaccia uniforme basata su HTTP operation.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Le operazioni GET, HEAD, PUT, DELETE sono idempotenti.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Le operazioni PUT e POST hanno lo stesso comportamento.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché le risorse sono identificate tramite gli URI (Uniform Resource Identifier), non file XML. La 3 è vera: GET, HEAD, PUT e DELETE garantiscono l'idempotenza (eseguirle più volte produce lo stesso risultato di eseguirle una volta sola). La 4 è falsa perché POST non è idempotente (crea nuove risorse).
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: XML vs JSON</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. La sintassi JSON è un sottoinsieme della sintassi JavaScript.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. XML è usato per descrivere dati strutturati che includono array.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. JSON è più verbose di XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. JSON è usato come base dei protocolli per i servizi web basati su SOAP.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è vera (JSON sta per JavaScript Object Notation e nasce proprio dalla notazione degli oggetti letterali in JS). La 2 è falsa perché XML nativamente non ha il tipo di dato "Array". La 3 è falsa perché JSON è molto meno verboso (più compatto). La 4 è falsa perché SOAP si basa esclusivamente su XML.
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: I fogli di stile CSS</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Definiscono lo stile di visualizzazione/formattazione.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Utilizzano il selettore id per identificare lo stile di un singolo elemento all'interno della pagina HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Definiscono delle regole con la sintassi "selettore {proprietà: valore, ...}".</span> <span class="answer-badge answer-v">VERO (concettualmente)</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'opzione 3 viene data genericamente come Vera per indicare che il blocco si apre con le parentesi graffe <code>{}</code>. <em>Attenzione tecnica:</em> il separatore reale tra le proprietà CSS non è la virgola, ma il punto e virgola <code>;</code>. Tuttavia, rispetto a esami precedenti (dove venivano proposte parentesi quadre errate), qui la sintassi base <code>selettore { ... }</code> è considerata corretta per definizione.
+            </div>
+        </div>
+
+        <div class="question-block" id="q6">
+            <h4 class="question-title">Domanda 6: HTML vs XHTML</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. XHTML ha regole sintattiche più stringenti di HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. XHTML e HTML sono molto diversi tra loro.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. XHTML combina HTML e JSON.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> XHTML (Extensible HyperText Markup Language) è sostanzialmente HTML formattato seguendo le rigidissime regole sintattiche di XML (es. tag scritti in minuscolo, valori degli attributi sempre tra virgolette, tag di chiusura sempre obbligatori). Non sono "molto diversi" funzionalmente (i tag sono gli stessi), ma solo sintatticamente. JSON non c'entra nulla con XHTML.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta: CSS3 e Media Rule</h4>
+            <p>Dopo aver descritto le caratteristiche principali e a cosa serve CSS3, si discutano in dettaglio le media rule.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                <strong>CSS3</strong> è l'ultima evoluzione del linguaggio CSS, utilizzato per definire lo stile e la formattazione visiva dei documenti HTML. CSS3 è stato suddiviso in moduli indipendenti e ha introdotto novità straordinarie come gli sfondi multipli, i bordi arrotondati, l'opacità, i Web Fonts (<code>@font-face</code>) e le animazioni/transizioni senza bisogno di JavaScript.<br><br>
+                <strong>Le Media Rule (Media Queries)</strong> sono la base fondamentale per il <em>Responsive Web Design</em> (RWD). Introdotte con CSS3, permettono di applicare blocchi di codice CSS diversi a seconda delle caratteristiche del dispositivo su cui la pagina viene visualizzata (come la larghezza dello schermo, l'altezza, la risoluzione o l'orientamento).<br>
+                La sintassi si basa sulla direttiva <code>@media</code> seguita da una condizione. Se la condizione è vera, il blocco di stili al suo interno viene eseguito sovrascrivendo gli stili precedenti.<br><br>
+                <strong>Esempio:</strong><br>
+                <code>body { background-color: blue; }</code><br>
+                <code>@media screen and (max-width: 600px) {</code><br>
+                <code>&nbsp;&nbsp;body { background-color: red; }</code><br>
+                <code>}</code><br>
+                In questo esempio, il colore di sfondo sarà blu su desktop, ma cambierà automaticamente in rosso sui dispositivi mobili (schermi più piccoli di 600px).
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

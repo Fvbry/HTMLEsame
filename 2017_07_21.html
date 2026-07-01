@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 21 Luglio 2017</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">21 Luglio 2017</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 21 Luglio 2017</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: WSDL</a></li>
+                <li>→ <a href="#q2">Domanda 2: Il tag &lt;body&gt; di un documento HTML</a></li>
+                <li>→ <a href="#q3">Domanda 3: Analisi Codice JavaScript (new Function)</a></li>
+                <li>→ <a href="#q4">Domanda 4: Analisi Codice HTML/JavaScript (DOM)</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta 1: POST vs PUT in REST</a></li>
+                <li>→ <a href="#qa2">Domanda Aperta 2: Web Storage vs Cookie</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: WSDL</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È un protocollo per lo scambio di messaggi tra computer sulla rete Internet.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Definisce l'interfaccia di un servizio Web.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Include la specifica di come associare il WSDL con SOAP.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Specifica l'indirizzo di binding del servizio.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché WSDL (Web Services Description Language) non è un protocollo di "trasporto" o "scambio" messaggi (quelli sono HTTP, SMTP o SOAP stesso), ma è un linguaggio XML usato per *descrivere* i servizi web. Le opzioni 2, 3 e 4 descrivono esattamente la struttura di un documento WSDL: definisce le operazioni (interfaccia), il protocollo di comunicazione (binding, tipicamente SOAP), e l'URL a cui il servizio risponde (endpoint).
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Il tag &lt;body&gt; di un documento HTML</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Definisce il contenuto del documento HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Contiene informazioni utilizzate dai motori di ricerca per indicizzare il documento HTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. È il tag contenitore di tutto il documento HTML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Il tag <code>&lt;body&gt;</code> contiene esclusivamente la parte visibile/strutturale della pagina (il contenuto). La 2 è falsa perché i metadati per i motori di ricerca si inseriscono nei tag <code>&lt;meta&gt;</code> all'interno della sezione <code>&lt;head&gt;</code>. La 3 è falsa perché il contenitore radice di *tutto* il documento è il tag <code>&lt;html&gt;</code>.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Si consideri il seguente codice JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>function exec_f(f, x) {
+  return f(x);
+}
+/* Nota: nel testo originale c'è un refuso "return xxx", 
+   logicamente inteso come "return x*x" */
+alert(exec_f(new Function ("x", "return x*x"), 3));</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. La funzione alert mostra undefined.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. La funzione alert mostra 9.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. La funzione alert mostra 3.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> Il costruttore <code>new Function("x", "return x*x")</code> crea una funzione anonima che prende in input un parametro e ne restituisce il quadrato. La funzione <code>exec_f</code> la esegue passandole il valore 3. Poiché 3 elevato al quadrato fa 9, l'alert mostrerà il risultato 9.
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Si consideri il seguente codice HTML/JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTML / JS</div>
+                <pre><code>&lt;p&gt;Hello World!&lt;/p&gt;
+&lt;p id="today"&gt;Today is AWC Examination Day!&lt;/p&gt;
+&lt;p id="disclaimer"&gt;&lt;/p&gt;
+&lt;p id="lunghezza"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var myNodeList = document.getElementsByTagName("p");
+var temp = myNodeList[1].innerHTML;
+document.getElementById("disclaimer").innerHTML = temp;
+document.getElementById("lunghezza").innerHTML = myNodeList.length;
+document.getElementsByTagName("p")[2].innerHTML = document.getElementById("lunghezza").innerHTML;
+&lt;/script&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Il paragrafo con id="disclaimer" e con id="lunghezza" hanno lo stesso valore.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Il paragrafo con id="today" e con id="lunghezza" hanno lo stesso valore.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Il paragrafo con id="disclaimer" ha valore 4.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Il paragrafo con id="lunghezza" ha valore "Hello World!".</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (Trace dello Script):</strong><br>
+                1) Ci sono in totale 4 paragrafi (length = 4).<br>
+                2) La variabile <code>temp</code> prende il contenuto del secondo paragrafo (indice 1), ovvero "Today is...".<br>
+                3) Il paragrafo "disclaimer" viene riempito con <code>temp</code> ("Today is...").<br>
+                4) Il paragrafo "lunghezza" viene riempito col numero totale di nodi (4).<br>
+                5) L'ultima istruzione accede al terzo paragrafo della pagina (indice 2, che è proprio "disclaimer"!) e ne sovrascrive il testo copiandoci dentro il contenuto di "lunghezza". Di conseguenza, alla fine dell'esecuzione, "disclaimer" diventa "4" e "lunghezza" è "4".
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1: Architetture REST (POST vs PUT)</h4>
+            <p>Nell'ambito delle architetture REST, si discutano le principali differenze tra le operazioni POST e PUT. Si presenti un esempio per ognuna delle operazioni.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Entrambi i metodi HTTP vengono utilizzati per manipolare le risorse inviando dati al server, ma si differenziano per la loro <strong>idempotenza</strong> (la garanzia che l'esecuzione multipla produca sempre il medesimo stato).<br><br>
+                - <strong>POST (Non Idempotente):</strong> Si utilizza per *creare* una nuova risorsa subordinata. Con il POST, il client invia i dati a un URI radice/collezione, e delega al server la responsabilità di generare un ID univoco e creare il percorso finale per quella risorsa. Se si invia la stessa richiesta POST tre volte, verranno creati tre oggetti distinti.<br>
+                <em>Esempio:</em> <code>POST /utenti</code> (invia i dati; il server crea l'utente e risponde assegnandogli un ID, es. `/utenti/5`).<br><br>
+                - <strong>PUT (Idempotente):</strong> Si utilizza per *aggiornare (sostituire interamente)* una risorsa esistente, oppure per *crearla* se il client è autorizzato a decidere il suo URI definitivo. L'idempotenza fa sì che eseguire una richiesta PUT più volte sovrascriverà sempre lo stesso elemento lasciando invariato lo stato del database rispetto alla prima esecuzione.<br>
+                <em>Esempio:</em> <code>PUT /utenti/5</code> (aggiorna integralmente l'utente numero 5 sostituendo i vecchi dati con il nuovo blocco JSON inviato nel payload).
+            </div>
+        </div>
+
+        <div class="question-block" id="qa2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2: Web Storage vs Cookie</h4>
+            <p>Si discutano in dettaglio local storage e session storage, presentando le principali differenze con i cookie.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Il Web Storage è un'API introdotta con HTML5 per risolvere i limiti dei classici cookie, consentendo al client di memorizzare dati in locale sotto forma di coppie chiave/valore.<br><br>
+                Si divide in due oggetti principali:<br>
+                1. <strong>localStorage:</strong> Memorizza i dati senza data di scadenza. Persistono anche dopo la chiusura del browser e il riavvio del sistema, e restano accessibili finché non vengono cancellati esplicitamente via codice (es. <code>localStorage.clear()</code>) o svuotando la cache del browser.<br>
+                2. <strong>sessionStorage:</strong> Memorizza i dati esclusivamente per la sessione corrente. Se l'utente chiude quella specifica scheda (tab) o la finestra del browser, tutti i dati vengono eliminati irrecuperabilmente.<br><br>
+                <strong>Principali differenze con i Cookie:</strong><br>
+                - <strong>Traffico di rete (Performance):</strong> I cookie vengono inclusi automaticamente in ogni singola richiesta HTTP inviata al server (rallentando la rete se pesanti), mentre il Web Storage risiede solo sul client e non viene mai inviato in automatico, ma prelevato solo quando serve via JavaScript.<br>
+                - <strong>Spazio di archiviazione:</strong> I cookie hanno un limite molto stringente (circa 4 KB), mentre il Web Storage permette di salvare una mole di dati notevole (di solito almeno 5 MB per dominio).
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

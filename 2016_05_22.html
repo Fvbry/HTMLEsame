@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 22 Maggio 2016</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">22 Maggio 2016</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 22 Maggio 2016</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codice JavaScript (Modifica Select)</a></li>
+                <li>→ <a href="#q2">Domanda 2: Oggetto XMLHttpRequest</a></li>
+                <li>→ <a href="#q3">Domanda 3: La funzionalità Drag & Drop</a></li>
+                <li>→ <a href="#q4">Domanda 4: Chiamata REST (POST /hotel_room)</a></li>
+                <li>→ <a href="#q5">Domanda 5: Il selettore class di CSS</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta: Standard JSON vs XML</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTML / JAVASCRIPT</div>
+                <pre><code>&lt;FORM NAME="modulo" onSubmit="print(); return false;"&gt;
+  &lt;SELECT NAME="menu" id="menuid"&gt;
+    &lt;OPTION ID="op1" VALUE="Paris"&gt;Paris&lt;/OPTION&gt;
+    &lt;OPTION ID="op2" VALUE="rome"&gt;Rome&lt;/OPTION&gt;
+  &lt;/SELECT&gt;
+  &lt;INPUT TYPE="Submit" VALUE="OK"&gt;
+&lt;/FORM&gt;
+
+&lt;SCRIPT language="JavaScript"&gt;
+var city = prompt("Are you European or American?", "European");
+if(city == "American") {
+  window.document.modulo.menu.options[0].text="New York";
+  window.document.modulo.menu.options[1].text="San Francisco";
+  var select= document.getElementById('menuid');
+  var opt= document.createElement('option');
+  opt.id= "op3";
+  opt.value= "Cleveland";
+  opt.innerHTML= "Cleveland";
+  select.appendChild (opt);
+}
+&lt;/SCRIPT&gt;</code></pre>
+            </div>
+            <p>La pagina HTML mostra un menù a tendina con:</p>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Paris e Rome sempre presenti tra le opzioni.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. New York in posizione 0 ove presente.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Cleveland e Paris mai insieme.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Cleveland sempre dopo Paris.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 6 righe):</strong> Se l'utente risponde "American", i testi di Paris (indice 0) e Rome (indice 1) vengono modificati in "New York" e "San Francisco", e viene aggiunto "Cleveland" in coda. Pertanto, Paris e Rome non sono sempre presenti (1 è Falsa). New York compare in posizione 0 solo se la condizione è soddisfatta (2 è Vera). Cleveland viene creata solo quando Paris viene eliminata/sovrascritta, quindi non coesistono mai (3 è Vera, 4 è Falsa).
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>xmlhttp=new XMLHttpRequest();
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Permette di scambiare dati con il server in background.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Invia una richiesta HTTP GET al server.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. È supportato da tutti i browser moderni.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Funzionerebbe correttamente con una url che punta a un file testuale diverso da XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Le prime tre affermazioni descrivono correttamente le funzionalità asincrone standard dell'oggetto `XMLHttpRequest` con metodo GET. La 4 è falsa perché l'ultima istruzione estrae esplicitamente `responseXML`; se la risorsa puntata non fosse un file XML valido e ben formato, la proprietà restituirebbe `null` inficiando il corretto funzionamento logico dello script.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: La funzionalità drag&drop</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Rende un elemento trascinabile tramite l'attributo "draggable=true".</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Permette di trascinare solo elementi testuali.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Era disponibile prima di HTML5.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Il Drag and Drop è una specifica nativa introdotta e standardizzata esclusivamente a partire da HTML5 (la 3 è falsa). Essa consente il trascinamento non solo di testo, ma di qualsiasi tipo di nodo dell'albero DOM, inclusi blocchi complessi, immagini e file esterni (la 2 è falsa).
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Si consideri il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTTP / REST</div>
+                <pre><code>POST /hotel_room
+201 CREATED
+Location: /hotel_room/{id}</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È parte di una comunicazione verso un servizio REST.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Comporta la creazione di una nuova hotel_room con id specificato dal richiedente.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Fornisce lo stesso risultato di una chiamata "PUT/hotel_room/{id}".</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'uso combinato di verbi HTTP standard, codici di stato di creazione (201) e l'header `Location` identifica univocamente lo stile architetturale REST (la 1 è vera). La 2 è falsa perché con il metodo `POST` l'identificatore viene generato ed assegnato autonomamente dal server, non dal richiedente. La 3 è falsa perché `PUT` richiede l'ID direttamente nell'URI della chiamata ed è un'operazione idempotente di sovrascrittura completa.
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Il selettore class di CSS</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Mappa a uno specifico tag.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. È definito in un file css tramite la sintassi ".nomeselettore".</span> <span class="answer-badge answer-v">VERO</span> </li>
+                <li class="solution-item"><span>3. È associato a un tag HTML tramite l'attributo class.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'affermazione 1 identifica il selettore di tipo (o di tag), mentre il selettore di classe è slegato da un tag specifico e può essere applicato trasversalmente a qualunque elemento HTML della pagina (la 1 è falsa). Nel foglio di stile si dichiara anteponendo il punto `.` al nome (la 2 è vera) e si collega agli elementi usando la proprietà `class="..."` (la 3 è vera).
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a risposta aperta</h4>
+            <p>Si descriva in dettaglio lo standard JSON e si discutano le principali differenze con lo standard XML.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Il **JSON** (JavaScript Object Notation) è un formato leggero per lo scambio di dati basato su testo, indipendente dal linguaggio ma che eredita la struttura letterale degli oggetti di JavaScript. Organizza i dati esclusivamente secondo due strutture: collezioni di coppie chiave/valore (oggetti racchiusi in `{}`) ed elenchi ordinati di valori (array racchiusi in `[]`). Supporta nativamente tipi di dato fondamentali quali stringhe, numeri, booleani e il valore `null`.
+                <br><br>
+                **Differenze principali con XML:**
+                <ul>
+                    <li>**Verbosità e Peso:** XML utilizza tag di apertura e chiusura espliciti per ogni dato, risultando significativamente più prolisso, ridondante e pesante da trasmettere sulla rete rispetto alla notazione compatta di JSON.</li>
+                    <li>**Tipi di dato nativi:** XML memorizza e interpreta intrinsecamente ogni valore come stringa di testo puro. JSON introduce la tipizzazione nativa permettendo di distinguere direttamente un numero o un valore booleano senza ricorrere a successivi casting software.</li>
+                    <li>**Supporto agli Array:** JSON possiede una sintassi nativa immediata per la dichiarazione dei vettori/liste (`[]`). In XML non esistono array nativi, costringendo lo sviluppatore ad annidare tag ripetitivi con lo stesso nome.</li>
+                    <li>**Parsing ed Integrazione Web:** In ambiente browser, l'integrazione di JSON con JavaScript è immediata e velocissima grazie al metodo nativo `JSON.parse()`. XML richiede invece l'interrogazione dell'albero del DOM tramite parser più pesanti e l'uso di routine complesse di navigazione tra nodi.</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

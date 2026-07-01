@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 1 Settembre 2016</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">1 Settembre 2016</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 1 Settembre 2016</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Modellazione dati (JSON vs XML)</a></li>
+                <li>→ <a href="#q2">Domanda 2: L'oggetto XMLHttpRequest</a></li>
+                <li>→ <a href="#q3">Domanda 3: In Javascript, le funzioni</a></li>
+                <li>→ <a href="#q4">Domanda 4: Analisi Codice HTML/JS (Mouse Events)</a></li>
+                <li>→ <a href="#q5">Domanda 5: Analisi Codice HTML (Drag & Drop)</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta 1: Protocollo SOAP</a></li>
+                <li>→ <a href="#qa2">Domanda Aperta 2: CSS (Class vs ID)</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Uno sviluppatore deve decidere come modellare i dati gestiti dalla sua applicazione web. Il suo obiettivo è di modellare i dati in maniera che siano facilmente interpretabili e che riducano il traffico da e verso l'applicazione web.</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Lo sviluppatore modellerà i dati in formato JSON.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Lo sviluppatore modellerà i dati in formato testuale.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Lo sviluppatore modellerà i dati in formato XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> JSON (JavaScript Object Notation) è la scelta ideale: rispetto a XML è molto meno verboso (riduce il payload/traffico di rete) ed è nativamente interpretato dal browser tramite JavaScript senza richiedere complessi parser aggiuntivi. (L'opzione 2 è considerata falsa in quanto troppo generica: un formato testuale semplice non è strutturato e quindi non facilmente interpretabile).
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: L'oggetto XMLHttpRequest</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È usato per scambiare dati in background con il server.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Permette di scambiare solo dati in formato XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Permette di ricevere dati dopo che la pagina è stata caricata.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> <code>XMLHttpRequest</code> è il nucleo della tecnologia AJAX. Nonostante il nome contenga "XML", può scambiare qualsiasi formato di dati (XML, JSON, testo piano). Il suo scopo principale è proprio quello di inviare e ricevere dati dal server in background, aggiornando la pagina senza bisogno di ricaricarla.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: In Javascript, le funzioni</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Sono definite tramite la keyword function.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Definiscono sia funzioni che procedure.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Vengono chiamate fornendo la lista dei parametri attuali.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Tutte vere. In JS si usa la parola chiave <code>function</code>. Possono agire da "funzioni" (se restituiscono un valore con <code>return</code>) o da "procedure" (se si limitano ad eseguire un blocco di codice senza restituire nulla esplicitamente). Per essere eseguite, devono essere invocate passando loro i parametri attuali.
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTML / JS</div>
+                <pre><code>&lt;div align="center"&gt;
+  &lt;form name="modulo"&gt;
+    &lt;input type="text" name="over" value="Where is the mouse?" size="50px"&gt;
+  &lt;/form&gt;
+  
+  &lt;a href="#" 
+     onMouseOver="window.document.modulo.over.value='Milan';" 
+     onmouseout="window.document.modulo.over.value='Where is the mouse?'"&gt;scritta1&lt;/a&gt;
+  &lt;BR&gt;&lt;BR&gt;
+  
+  &lt;a href="#" 
+     onMouseOver="window.document.modulo.over.value='Crema';" 
+     onmouseout="window.document.modulo.over.value='Where is the mouse?'"&gt;scritta2&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Intercetta il passaggio del mouse sopra ai link contenuti nella pagina.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Non mostra mai la scritta 'Crema'.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Mostra la scritta 'Where is the mouse? Milan'.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Assegna uno di questi valori all'oggetto input: 'Where is the mouse?', 'Milan', oppure 'Crema'.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 2 è falsa perché passando sul secondo link viene visualizzato "Crema". La 3 è falsa perché il codice JS sostituisce interamente il <code>value</code> dell'input, non concatena le stringhe (quindi si vedrà solo "Milan", non "Where is the mouse? Milan"). La 4 è vera: in base all'interazione dell'utente, la casella mostrerà sempre e solo uno di quei tre valori.
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTML5</div>
+                <pre><code>&lt;div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;img id="drag1" src="img.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69"&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Permette di trascinare un elemento img in un'altra posizione.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Utilizza l'attributo draggable="true" per rendere l'elemento img non trascinabile.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Utilizza l'attributo ondrop="drop(event)" per definire dove l'elemento può essere rilasciato.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Vieta di trascinare l'elemento img all'interno dell'elemento div.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Si tratta dell'implementazione nativa HTML5 del Drag & Drop. La 2 è falsa perché <code>draggable="true"</code> serve proprio a *rendere* trascinabile l'elemento. La 4 è falsa perché gli attributi <code>ondrop</code> e <code>ondragover</code> posti sul tag <code>&lt;div&gt;</code> servono esattamente ad autorizzare e gestire il rilascio dell'immagine al suo interno.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1: Protocollo SOAP</h4>
+            <p>Si descriva il protocollo SOAP alla base dei SOAP Web Service.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                SOAP (Simple Object Access Protocol) è un protocollo di comunicazione formale, standardizzato e basato su XML, ideato per permettere lo scambio di messaggi strutturati e tipizzati tra macchine e applicazioni eterogenee su una rete (es. da Java a .NET e viceversa). Opera in architetture distribuite tipiche dei Web Service (SOA).<br><br>
+                Un messaggio SOAP è rigorosamente strutturato in diverse sezioni XML:<br>
+                1. <strong>Envelope (Busta):</strong> È l'elemento radice obbligatorio che identifica il documento XML come un messaggio SOAP e ne delimita l'inizio e la fine.<br>
+                2. <strong>Header (Intestazione):</strong> Opzionale, viene utilizzato per scambiare metadati a livello di infrastruttura, come token per l'autenticazione/sicurezza o informazioni per il routing.<br>
+                3. <strong>Body (Corpo):</strong> Obbligatorio, contiene il payload (carico utile) effettivo della chiamata, ovvero i dati in input per l'operazione richiesta o i dati in output di una risposta (inclusi i messaggi <em>Fault</em> in caso di errore).<br><br>
+                Generalmente SOAP viaggia incapsulato all'interno di messaggi HTTP (spesso tramite richieste POST).
+            </div>
+        </div>
+
+        <div class="question-block" id="qa2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2: CSS (Class vs ID)</h4>
+            <p>Nell'ambito del linguaggio CSS, si descrivano in dettaglio le differenze tra i selettori class ed id e si proponga un esempio del loro utilizzo.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Sia <em>class</em> che <em>id</em> sono selettori CSS utilizzati per applicare stili specifici ad elementi HTML personalizzati, ma differiscono radicalmente per il loro ambito di utilizzo e per la "specificità" (il peso) nella valutazione a cascata.<br><br>
+                - <strong>ID (Identificatore Unico):</strong> Nel CSS si indica con il prefisso <code>#</code>. L'attributo <code>id</code> deve essere <strong>univoco</strong> all'interno di un'intera pagina HTML: non possono esistere due elementi con lo stesso ID. Viene usato per stilizzare elementi unici e strutturali (es. un menu principale o un footer) e ha una "specificità" (peso) superiore a quella delle classi nella risoluzione dei conflitti.<br>
+                - <strong>Class (Classe):</strong> Nel CSS si indica con il prefisso <code>.</code> (punto). L'attributo <code>class</code> è <strong>riutilizzabile</strong>: la stessa classe può essere applicata a un numero illimitato di elementi diversi nella stessa pagina. È l'ideale per stili ricorrenti (es. pulsanti, testo evidenziato, box di avviso).<br><br>
+                <strong>Esempio:</strong><br>
+                <em>CSS:</em><br>
+                <code>#header_principale { background-color: blue; }</code> (Stile per l'unico header)<br>
+                <code>.testo_importante { color: red; font-weight: bold; }</code> (Stile da riutilizzare)<br>
+                <em>HTML:</em><br>
+                <code>&lt;div id="header_principale"&gt;Benvenuti&lt;/div&gt;</code><br>
+                <code>&lt;p class="testo_importante"&gt;Attenzione all'esame!&lt;/p&gt;</code><br>
+                <code>&lt;span class="testo_importante"&gt;Non dimenticare il badge.&lt;/span&gt;</code>
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

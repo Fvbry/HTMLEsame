@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 16 Aprile 2019</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">16 Aprile 2019</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 16 Aprile 2019</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Modellazione Dati (JSON vs XML)</a></li>
+                <li>→ <a href="#q2">Domanda 2: L'oggetto XMLHttpRequest</a></li>
+                <li>→ <a href="#q3">Domanda 3: Analisi codice HTML/JS (Eventi Mouse)</a></li>
+                <li>→ <a href="#q4">Domanda 4: Analisi codice JavaScript (SessionStorage)</a></li>
+                <li>→ <a href="#q5">Domanda 5: Un RESTful service</a></li>
+                <li>→ <a href="#q6">Domanda 6: Le animazioni CSS3</a></li>
+                <li>→ <a href="#qa1">Domanda a Risposta Aperta: HTML DOM</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Uno sviluppatore deve decidere come modellare i dati gestiti dalla sua applicazione web. Il suo obiettivo è di modellare i dati in maniera che siano facilmente interpretabili e che riducano il traffico da e verso l'applicazione web.</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Lo sviluppatore modellerà i dati in formato JSON.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Lo sviluppatore modellerà i dati in formato testuale.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Lo sviluppatore modellerà i dati in formato XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> JSON (JavaScript Object Notation) è il formato ottimale perché è molto più leggero e meno verboso rispetto a XML (riducendo così il traffico di rete) ed è nativamente e facilmente interpretabile dal browser tramite JavaScript senza pesanti parser aggiuntivi.
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: L'oggetto XMLHttpRequest</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È usato per scambiare dati in background con il server.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Permette di scambiare solo dati in formato XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Permette di ricevere dati dopo che la pagina è stata caricata.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. È definito lato client.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'opzione 2 è falsa perché, nonostante il nome contenga "XML", l'oggetto <code>XMLHttpRequest</code> può ricevere e trasmettere dati in diversi formati, inclusi testo piano e JSON (oggi lo standard più usato), interrogando la proprietà <code>responseText</code>.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Si consideri il seguente codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">HTML / JS</div>
+                <pre><code>&lt;div align="center"&gt;
+  &lt;form name="modulo"&gt;
+    &lt;input type="text" name="over" value="Dove si trova il puntatore?" size="50px"&gt;
+  &lt;/form&gt;
+  
+  &lt;a href="" onMouseOver="window.document.modulo.over.value='Destra';" 
+     onmouseout="window.document.modulo.over.value='Dove si trova il puntatore?'"&gt;scritta1&lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;
+  
+  &lt;a href="#" onMouseOver="window.document.modulo.over.value='Sinistra';" 
+     onmouseout="window.document.modulo.over.value='Dove si trova il puntatore?'"&gt;scritta2&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Intercetta il passaggio del mouse sopra ai link contenuti nella pagina.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Non mostra mai la scritta 'Sinistra'.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Mostra la scritta 'Destra' insieme alla scritta 'Sinistra' quando il mouse passa velocemente da un link all'altro.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Assegna unicamente uno di questi valori all'oggetto input: 'Destra' oppure 'Sinistra'.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 2 è falsa (mostra 'Sinistra' passando su scritta2). La 3 è falsa perché l'assegnazione del valore sostituisce completamente la stringa precedente (non c'è concatenazione). La 4 è falsa perché viene assegnato anche il valore originario di default <em>'Dove si trova il puntatore?'</em> quando il mouse esce dal link (evento <code>onmouseout</code>).
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Si consideri il seguente codice JavaScript</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>&lt;script type="text/javascript"&gt;
+var listino = [{"id": 1, "prezzo": "500euro"}, { "id": 2, "prezzo": "400euro"}, {"id": 3, "prezzo": "600euro"}];
+var prodotti = [{"id": 1, "modello": "Galaxy S10", "marca": "Samsung"}, { "id": 2, "modello": "P20 pro", "marca": "Huawei"}, {"id": 3, "modello": "IphoneX", "marca": "Apple"}];
+
+sessionStorage.setItem("listino", JSON.stringify(listino));
+sessionStorage.setItem("prodotti", JSON.stringify(prodotti));
+
+var chiave = sessionStorage.key(1);
+var oggetto = JSON.parse(sessionStorage.getItem(chiave));
+alert(oggetto[1].modello);
+&lt;/script&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. alert stampa 'P20 pro'.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. sessionStorage.key(1) ritorna {'id': 2, "modello": "P20 pro", "marca": "Huawei"}.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. JSON.parse trasforma una stringa in un oggetto JavaScript.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> 
+                La 1 è falsa (potenzialmente incerta) perché l'API Web Storage <strong>non garantisce</strong> l'ordine delle chiavi salvate; <code>key(1)</code> potrebbe puntare a "listino" e non a "prodotti", generando <code>undefined</code> per <code>.modello</code>. <br>
+                La 2 è falsa perché il metodo <code>sessionStorage.key(indice)</code> restituisce il *nome della chiave* (es. la stringa "prodotti" o "listino"), non il valore dell'oggetto in sé.
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: Un RESTful service</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È stateless.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Può usare rappresentazioni multiple delle risorse.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Utilizza l'interfaccia uniforme di HTTP.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Questi sono i vincoli fondamentali dell'architettura REST: la mancanza di sessione salvata lato server (Statelessness), la possibilità per una risorsa di essere richiesta in JSON, XML o HTML (Content Negotiation), e l'impiego dei metodi standard HTTP (GET, POST, PUT, DELETE).
+            </div>
+        </div>
+
+        <div class="question-block" id="q6">
+            <h4 class="question-title">Domanda 6: Le animazioni CSS3</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Permettono di modificare la posizione di un elemento.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Non permettono di definire la durata dell'animazione.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Permettono di definire un'animazione che viene ripetuta nel tempo.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Suddividono l'animazione lungo l'asse temporale.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 2 è falsa perché la durata è un parametro fondamentale e si imposta esplicitamente tramite la proprietà <code>animation-duration</code> (es. <code>4s</code>).
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta: Il ruolo dell'HTML DOM</h4>
+            <p>Nell'ambito della programmazione web basata su HTML e JavaScript, si discuta in dettaglio il ruolo dell'HTML DOM. Si proponga inoltre un esempio del suo utilizzo.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                L'HTML DOM (Document Object Model) è uno standard del W3C che modella la struttura di una pagina web sotto forma di un albero di oggetti (nodi). Il suo ruolo fondamentale è fungere da ponte (interfaccia) tra il documento HTML statico e i linguaggi di scripting come JavaScript. Tramite il DOM, JavaScript ha il potere di accedere dinamicamente alla pagina, leggere i contenuti, modificare il testo o lo stile CSS, intercettare gli eventi dell'utente, creare nuovi elementi o eliminare quelli esistenti senza dover ricaricare la pagina.<br><br>
+                <strong>Esempio di utilizzo:</strong><br>
+                Supponiamo di avere un titolo nella pagina HTML: <code>&lt;h1 id="titolo"&gt;Ciao&lt;/h1&gt;</code>.<br>
+                In JavaScript possiamo modificare il testo e il colore accedendo a quell'elemento tramite il DOM:<br>
+                <code>var elemento = document.getElementById("titolo");</code><br>
+                <code>elemento.innerHTML = "Benvenuto utente!";</code><br>
+                <code>elemento.style.color = "blue";</code>
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

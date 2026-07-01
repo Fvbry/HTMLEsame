@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 21 Luglio 2016</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">21 Luglio 2016</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 21 Luglio 2016</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codice JavaScript (Web Storage e JSON)</a></li>
+                <li>→ <a href="#q2">Domanda 2: Analisi Codice CSS (Transition)</a></li>
+                <li>→ <a href="#q3">Domanda 3: Il semantic markup in HTML5</a></li>
+                <li>→ <a href="#q4">Domanda 4: WSDL</a></li>
+                <li>→ <a href="#q5">Domanda 5: JavaScript</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta 1: HTTP Operation e REST</a></li>
+                <li>→ <a href="#qa2">Domanda Aperta 2: Ruolo dell'HTML DOM</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>&lt;script type="text/javascript"&gt;
+var codicefiscale = [
+  {"id": 1, "cf": "123456"},
+  {"id": 2, "cf": "234567"},
+  {"id": 3, "cf": "345678"}
+];
+var elenco = [
+  {"id": 1, "nome": "Mario", "cognome": "Rossi"},
+  {"id": 2, "nome": "Carlo", "cognome": "Bianchi"},
+  {"id": 3, "nome": "Alice", "cognome": "Verdi"}
+];
+
+sessionStorage.setItem("cf", JSON.stringify(codicefiscale));
+sessionStorage.setItem("list", JSON.stringify(elenco));
+
+var chiave = sessionStorage.key(0);
+var tmp = sessionStorage.getItem(chiave);
+var tmp_parsed = JSON.parse(tmp);
+alert(tmp_parsed[1].cf);
+&lt;/script&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. alert stampa 123456.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. alert stampa 234567.</span> <span class="answer-badge answer-v">VERO (didatticamente)</span></li>
+                <li class="solution-item"><span>3. alert stampa 345678.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. alert ritorna un errore.</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> Le specifiche del Web Storage non garantiscono un ordine rigoroso per le chiavi. Tuttavia, assumendo che il browser mantenga l'ordine di inserimento (o alfabetico), <code>key(0)</code> restituirà "cf". Di conseguenza, <code>tmp_parsed</code> sarà l'array <code>codicefiscale</code>. L'elemento in posizione <code>[1]</code> è il secondo oggetto (id: 2), il cui attributo <code>cf</code> è "234567". (Nel caso remoto `key(0)` fosse "list", l'alert stamperebbe semplicemente `undefined`, non un errore bloccante).
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Il seguente brano di codice</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">CSS</div>
+                <pre><code>div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s, height 2s, transform 2s;
+}
+div:hover {
+  width: 300px;
+  height: 300px;
+  transform: rotate(180deg);
+}</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Definisce un'animazione basata su CSS3.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Al passare del mouse sopra l'elemento div, sposta l'elemento div verso l'alto.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Al passare del mouse sopra l'elemento div, rimpicciolisce l'elemento div.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Al passare del mouse sopra l'elemento div, ruota l'elemento div di 180 gradi.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è vera (le <code>transition</code> e <code>transform</code> sono costrutti chiave introdotti con CSS3). La 2 è falsa in quanto manca qualsiasi regola di traslazione verticale (es. <code>translateY</code> o <code>top</code>). La 3 è falsa perché l'elemento div viene ingrandito, passando da 100px a 300px. La 4 è vera grazie alla regola <code>transform: rotate(180deg)</code>.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Il semantic markup in HTML5</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Associa un significato al contenuto.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Rende una pagina web comprensibile sia all'uomo che alla macchina.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Migliora l'usabilità per persone con disabilità.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'uso di tag semantici (es. <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>) non solo rende il codice più chiaro per gli sviluppatori e per i motori di ricerca, ma è anche cruciale per le tecnologie assistive, come gli screen reader, che aiutano gli utenti ipovedenti a navigare in maniera strutturata la pagina. Tutte e tre le affermazioni sono corrette.
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: WSDL</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È un protocollo per lo scambio di messaggi tra computer sulla rete Internet.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Definisce l'interfaccia di un servizio Web.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Include la specifica di come associare il WSDL con SOAP.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Specifica l'indirizzo di binding del servizio.</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché WSDL (Web Services Description Language) non è un protocollo per lo "scambio" (per quello si usa HTTP o SOAP stesso), ma un linguaggio basato su XML per <em>descrivere</em> le caratteristiche del servizio. Le affermazioni 2, 3 e 4 descrivono in modo accurato i contenuti del file WSDL (interfaccia, binding a SOAP e indirizzo fisico/endpoint del servizio).
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <h4 class="question-title">Domanda 5: JavaScript</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. È un linguaggio fortemente tipato.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Non permette di assegnare a una stessa variabile due valori consecutivi di tipo diverso.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Supporta variabili con due scope: locale e globale.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Richiede che ogni istruzione termini con il punto e virgola ; .</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 e la 2 sono false perché JavaScript è <em>loosely typed</em> (debolmente tipato e dinamico); la stessa variabile può contenere un numero in una riga e una stringa nella riga successiva. La 4 è tecnicamente falsa perché JS implementa il meccanismo dell'<em>Automatic Semicolon Insertion (ASI)</em>, grazie al quale può interpretare correttamente il codice anche senza il punto e virgola (sebbene sia considerata best practice utilizzarlo).
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1: HTTP Operation e REST</h4>
+            <p>Si descrivano le HTTP operation alla base delle architetture REST.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Nelle architetture REST (REpresentational State Transfer), lo scambio e la manipolazione delle risorse avviene sfruttando in modo nativo le operazioni messe a disposizione dal protocollo HTTP (mappando le comuni operazioni CRUD sui database). Le principali operazioni sono:<br><br>
+                - <strong>GET:</strong> Metodo <em>sicuro</em> e <em>idempotente</em>. Viene usato esclusivamente per richiedere/leggere lo stato e la rappresentazione di una specifica risorsa, senza comportare alcuna modifica o effetto collaterale lato server.<br>
+                - <strong>POST:</strong> Metodo <em>non idempotente</em>. Utilizzato generalmente per creare una nuova risorsa subordinata all'interno di una collezione (es. inviando dati a un URI radice come `/utenti`). È il server a prendersi in carico la creazione e a restituire l'ID generato.<br>
+                - <strong>PUT:</strong> Metodo <em>idempotente</em>. Viene usato per creare una nuova risorsa qualora l'ID/URI sia già conosciuto e stabilito dal client, oppure per aggiornare/sostituire per intero una risorsa preesistente. Essendo idempotente, invocare il metodo più volte produce il medesimo stato finale.<br>
+                - <strong>DELETE:</strong> Metodo <em>idempotente</em>. Serve a rimuovere dal server la risorsa identificata dall'URI richiesto.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2: Ruolo dell'HTML DOM</h4>
+            <p>Nell'ambito del linguaggio di scripting JavaScript, si descriva il ruolo dell'HTML DOM per la modifica degli elementi di una pagina web e si proponga un esempio del suo utilizzo.</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Il Document Object Model (DOM) HTML è un'interfaccia standard del W3C che rappresenta la pagina caricata dal browser sotto forma di una struttura logica ad albero, composta da nodi interconnessi (che incapsulano i tag HTML, i testi e gli attributi).<br><br> 
+                Il ruolo del DOM è fungere da fondamentale "ponte" tra il documento statico HTML e linguaggi di programmazione dinamici come JavaScript. Attraverso le API fornite dal DOM, JavaScript guadagna il potere di leggere, attraversare, aggiungere, eliminare o modificare in tempo reale qualsiasi elemento della pagina (compresi gli stili CSS), scatenando un aggiornamento visivo istantaneo senza dover ricaricare l'intera scheda (Dynamic HTML).<br><br>
+                <strong>Esempio pratico:</strong><br>
+                Supponiamo di avere un paragrafo nella pagina: <code>&lt;p id="avviso"&gt;Attendere...&lt;/p&gt;</code>.<br>
+                Con JavaScript possiamo intercettarlo nel DOM e mutarne sia il testo che il colore:<br>
+                <code>var elemento = document.getElementById("avviso");</code><br>
+                <code>elemento.innerHTML = "Operazione completata!";</code><br>
+                <code>elemento.style.color = "green";</code>
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame PWM - 26 Gennaio 2018</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="page-header-title">26 Gennaio 2018</h1>
+        <a href="index.html" class="nav-btn">Torna alla Home</a>
+    </header>
+
+    <main>
+        <div class="toc">
+            <h3>Indice delle Domande - 26 Gennaio 2018</h3>
+            <ul>
+                <li>→ <a href="#q1">Domanda 1: Analisi Codice JavaScript (Scope)</a></li>
+                <li>→ <a href="#q2">Domanda 2: Il semantic markup in HTML5</a></li>
+                <li>→ <a href="#q3">Domanda 3: Animazioni CSS3 (Transition e Hover)</a></li>
+                <li>→ <a href="#q4">Domanda 4: Architetture REST</a></li>
+                <li>→ <a href="#qa1">Domanda Aperta 1: CSS Box Model</a></li>
+                <li>→ <a href="#qa2">Domanda Aperta 2: Ruolo dell'HTML DOM in JS</a></li>
+            </ul>
+        </div>
+
+        <div class="question-block" id="q1">
+            <h4 class="question-title">Domanda 1: Si consideri il seguente codice JavaScript [cite: 889]</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">JAVASCRIPT</div>
+                <pre><code>&lt;script language="javascript"&gt;
+var f1 = "Ferrari";
+function funzione1 (motogr) {
+  return f1 + " " + motogr;
+}
+function funzione2() {
+  var f1 = "Red Bull";
+  return funzione1("Yamaha");
+}
+window.alert(funzione2());
+&lt;/script&gt;</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. funzione2 stampa "Ferrari Yamaha". [cite: 902]</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. funzione2 stampa "Red Bull Yamaha". [cite: 903]</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. funzione2 ritorna un errore. [cite: 904]</span> <span class="answer-badge answer-f">FALSO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 3 righe):</strong> JavaScript utilizza il <em>lexical scoping</em> (scope lessicale). La funzione <code>funzione1</code> è dichiarata nel contesto globale, quindi fa riferimento alla variabile globale <code>f1</code> ("Ferrari"). Quando <code>funzione1</code> viene richiamata dall'interno di <code>funzione2</code>, non "vede" la variabile locale <code>var f1 = "Red Bull"</code>, ma continua a utilizzare quella globale con cui è stata inizializzata.
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <h4 class="question-title">Domanda 2: Il semantic markup in HTML5 [cite: 906]</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Associa un significato al contenuto. [cite: 907]</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Rende una pagina web comprensibile sia all'uomo che alla macchina. [cite: 908, 909]</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Migliora l'usabilità per persone con disabilità. [cite: 910]</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> Tutte le affermazioni sono corrette. I tag semantici (come <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>) arricchiscono il codice di significato (vantaggio per i crawler) e forniscono una struttura chiara agli screen reader usati da persone con disabilità visive.
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <h4 class="question-title">Domanda 3: Si consideri il seguente codice CSS [cite: 911]</h4>
+            <div class="code-cube">
+                <div class="code-cube-header">CSS</div>
+                <pre><code>div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s, height 2s, transform 2s;
+}
+div:hover {
+  width: 300px;
+  height: 300px;
+  transform: rotate(180deg);
+}</code></pre>
+            </div>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Definisce un'animazione basata su CSS3. [cite: 922]</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Al passare del mouse sopra l'elemento div, sposta l'elemento div verso destra. [cite: 923]</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Al passare del mouse sopra l'elemento div, ingrandisce l'elemento div. [cite: 924]</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>4. Al passare del mouse sopra l'elemento div, ruota l'elemento div di 180 gradi. [cite: 925]</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 2 è falsa perché non c'è nessuna traslazione (es. <code>translateX</code> o <code>left</code>). Il div si ingrandisce (da 100px a 300px) e ruota su sé stesso (<code>rotate(180deg)</code>), effetti resi fluidi dalla regola <code>transition</code> del CSS3.
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <h4 class="question-title">Domanda 4: Nell'ambito delle architetture REST [cite: 926]</h4>
+            <ul class="solution-list">
+                <li class="solution-item"><span>1. Il metodo PUT permette di creare risorse subordinate. [cite: 927]</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Il metodo GET permette di ottenere lo stato di una risorsa. [cite: 928]</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Con il metodo POST il server decide il nome della risorsa creata. [cite: 929]</span> <span class="answer-badge answer-v">VERO</span></li>
+            </ul>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa. È il metodo <code>POST</code> che viene usato per creare risorse subordinate in una collection (es. un nuovo utente dentro `/utenti/`). Il <code>PUT</code> agisce su un URL noto, solitamente per aggiornare/sostituire una risorsa esistente o per crearla qualora l'ID sia già stabilito dal client. La 3 è vera per lo stesso motivo: col POST il client invia i dati alla root e riceve in risposta l'ID/URI creato dal server.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa1">
+            <h4 class="question-title">Domanda a Risposta Aperta 1: CSS Box Model</h4>
+            <p>Dopo aver descritto le caratteristiche principali e a cosa servono i fogli di stile CSS, mostrando la sintassi e un esempio di regola CSS, si discuta in dettaglio il CSS box model. [cite: 932]</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                I CSS (Cascading Style Sheets) sono il linguaggio di stile usato per descrivere l'aspetto visivo e la formattazione dei documenti HTML, permettendo di separare la struttura (HTML) dalla presentazione (colori, layout, font). Una regola base si scrive come: <code>selettore { proprietà: valore; }</code>. <br>Esempio: <code>p { color: blue; }</code> imposta tutti i paragrafi di colore blu.<br><br>
+                Il <strong>CSS Box Model</strong> è il fondamento geometrico per il posizionamento degli elementi. Ogni elemento HTML è renderizzato come un "box" rettangolare composto da quattro livelli concentrici (dall'interno verso l'esterno):<br>
+                1. <strong>Content:</strong> L'area in cui appare il contenuto (testo/immagine). Definito da width e height.<br>
+                2. <strong>Padding:</strong> Spazio interno, trasparente, che distanzia il contenuto dal bordo.<br>
+                3. <strong>Border:</strong> La linea visibile che avvolge il padding.<br>
+                4. <strong>Margin:</strong> Spazio esterno, trasparente, che separa il box dagli elementi HTML adiacenti.
+            </div>
+        </div>
+
+        <div class="question-block" id="qa2">
+            <h4 class="question-title">Domanda a Risposta Aperta 2: Ruolo dell'HTML DOM</h4>
+            <p>Nell'ambito della programmazione web basata su HTML e JavaScript, si discuta in dettaglio il ruolo dell'HTML DOM. Si proponga inoltre un esempio del suo utilizzo. [cite: 934, 935]</p>
+            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Soluzione:</strong><br>
+                Il Document Object Model (DOM) è un'API standard che modella il documento HTML caricato nel browser come una struttura ad albero, composta da nodi (che rappresentano tag, attributi e testo). Il suo ruolo è fungere da ponte tra l'HTML e i linguaggi di scripting (come JavaScript). Senza il DOM, JS non potrebbe comprendere la struttura della pagina. Tramite i metodi del DOM, JavaScript può interagire con il documento in tempo reale (Dynamic HTML): leggere, aggiungere, modificare o cancellare tag, attributi e stili CSS in base all'interazione dell'utente.<br><br>
+                <strong>Esempio di utilizzo:</strong><br>
+                <code>&lt;div id="messaggio"&gt;Saluto&lt;/div&gt;</code><br>
+                In JavaScript possiamo modificare questo elemento chiamando l'API del DOM:<br>
+                <code>document.getElementById("messaggio").innerHTML = "Benvenuto!";</code><br>
+                Questo cambia dinamicamente il testo a schermo senza dover ricaricare l'intera pagina web.
+            </div>
+        </div>
+
+    </main>
+
+    <button id="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
