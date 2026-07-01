@@ -2,36 +2,36 @@
 <html lang="it">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esame PWM - 27 Gennaio 2020</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esame PWM - 27 Gennaio 2020</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1 id="page-header-title">27 Gennaio 2020</h1>
-        <a href="index.html" class="nav-btn">Torna alla Home</a>
-    </header>
+  <header>
+    <h1 id="page-header-title">27 Gennaio 2020</h1>
+    <a href="index.html" class="nav-btn">Torna alla Home</a>
+  </header>
 
-    <main>
-        <div class="toc">
-            <h3>Indice delle Domande - 27 Gennaio 2020</h3>
-            <ul>
-                <li>→ <a href="#q1">Domanda 1: Analisi Form HTML/CSS</a></li>
-                <li>→ <a href="#q2">Domanda 2: Istruzioni CSS3</a></li>
-                <li>→ <a href="#q3">Domanda 3: Statelessness in RESTful</a></li>
-                <li>→ <a href="#q4">Domanda 4: Output script JavaScript</a></li>
-                <li>→ <a href="#qa1">Domanda a risposta aperta: Analisi pagina HTML/JS</a></li>
-            </ul>
-        </div>
+  <main>
+    <div class="toc">
+      <h3>Indice delle Domande - 27 Gennaio 2020</h3>
+      <ul>
+        <li>→ <a href="#q1">Domanda 1: Analisi Form HTML/CSS</a></li>
+        <li>→ <a href="#q2">Domanda 2: Istruzioni CSS3</a></li>
+        <li>→ <a href="#q3">Domanda 3: Statelessness in RESTful</a></li>
+        <li>→ <a href="#q4">Domanda 4: Output script JavaScript</a></li>
+        <li>→ <a href="#qa1">Domanda a risposta aperta: Analisi pagina HTML/JS</a></li>
+      </ul>
+    </div>
 
-        <div class="question-block" id="q1">
-            <h4 class="question-title">Domanda 1: Si consideri il seguente brano di codice HTML e CSS</h4>
-            <div class="code-cube">
-                <div class="code-cube-header">HTML / CSS</div>
-                <pre><code>&lt;html&gt;
+    <div class="question-block" id="q1">
+      <h4 class="question-title">Domanda 1: Si consideri il seguente brano di codice HTML e CSS</h4>
+      <div class="code-cube">
+        <div class="code-cube-header">HTML / CSS</div>
+        <pre><code>&lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;HTML Interview Question Form tag&lt;/title&gt;
 &lt;style&gt;
@@ -63,7 +63,7 @@ button {
 &lt;form&gt;
   &lt;p&gt;Name:&lt;/p&gt;
   &lt;input type="text" name="user_name" placeholder="Enter Name"/&gt;&lt;br/&gt;&lt;br/&gt;
-  &lt;p&gt;Email: $&lt;/p&gt;
+  &lt;p&gt;Email: &lt;/p&gt;
   &lt;input type="email" name="user_email" placeholder="Enter email"/&gt;&lt;br/&gt;&lt;br/&gt;
   &lt;p&gt;Password: &lt;/p&gt;
   &lt;input type="password" name="user_pwd" placeholder="Enter Password"/&gt;&lt;br/&gt;
@@ -71,50 +71,64 @@ button {
 &lt;/form&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-            </div>
-            <p>Quale affermazione è corretta riguardo il codice della form?</p>
-            <ul class="solution-list">
-                <li class="solution-item"><span>1. Propone una form con 3 campi di testo</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>2. Il testo "enter email" è scritto in verde</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>3. Non è definito il colore della label submit del bottone</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>4. Non è corretto per cui l'output non è visualizzabile</span> <span class="answer-badge answer-f">FALSO</span></li>
-            </ul>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
-                <strong>Motivazione:</strong> 
-                <br>1. I campi sono di tipo <code>text</code>, <code>email</code> e <code>password</code>, non tutti di tipo testo.
-                <br>2. La pseudo-classe <code>input::placeholder</code> definisce il colore <code>blue</code>, non verde.
-                <br>3. Il colore del testo nel bottone è esplicitamente definito dalla regola <code>color: #ffffff;</code> (bianco).
-                <br>4. Il codice HTML e CSS è corretto e verrà visualizzato senza errori.
-            </div>
-        </div>
+      </div>
+      <p>Quale affermazione è corretta riguardo il codice della form?</p>
+      <ul class="solution-list">
+        <li class="solution-item"><span>1. Propone una form con 3 campi di testo</span> <span
+            class="answer-badge answer-f">FALSO</span></li>
+        <li class="solution-item"><span>2. Il testo "enter email" è scritto in verde</span> <span
+            class="answer-badge answer-f">FALSO</span></li>
+        <li class="solution-item"><span>3. Non è definito il colore della label submit del bottone</span> <span
+            class="answer-badge answer-f">FALSO</span></li>
+        <li class="solution-item"><span>4. Non è corretto per cui l'output non è visualizzabile</span> <span
+            class="answer-badge answer-f">FALSO</span></li>
+      </ul>
+      <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+        <strong>Motivazione:</strong>
+        <br>1. I campi sono di tipo <code>text</code>, <code>email</code> e <code>password</code>, non tutti di tipo
+        testo.
+        <br>2. La pseudo-classe <code>input::placeholder</code> definisce il colore <code>blue</code>, non verde.
+        <br>3. Il colore del testo nel bottone è esplicitamente definito dalla regola <code>color: #ffffff;</code>
+        (bianco).
+        <br>4. Il codice HTML e CSS è corretto e verrà visualizzato senza errori.
+      </div>
+    </div>
 
-        <div class="question-block" id="q2">
-            <h4 class="question-title">Domanda 2: Quali delle seguenti istruzioni CSS3 sono corrette</h4>
-            <ul class="solution-list">
-                <li class="solution-item"><span>1. h1 {font: 20px Verdana, Arial}</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>2. div {color background: black}</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>3. p {margin: 10px 5px 10px 5px;}</span> <span class="answer-badge answer-v">VERO</span></li>
-            </ul>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
-                <strong>Motivazione:</strong> La 2 è sintatticamente errata: la proprietà corretta per lo sfondo è <code>background-color: black</code> o semplicemente <code>background: black</code>.
-            </div>
-        </div>
+    <div class="question-block" id="q2">
+      <h4 class="question-title">Domanda 2: Quali delle seguenti istruzioni CSS3 sono corrette</h4>
+      <ul class="solution-list">
+        <li class="solution-item"><span>1. h1 {font: 20px Verdana, Arial}</span> <span
+            class="answer-badge answer-v">VERO</span></li>
+        <li class="solution-item"><span>2. div {color background: black}</span> <span
+            class="answer-badge answer-f">FALSO</span></li>
+        <li class="solution-item"><span>3. p {margin: 10px 5px 10px 5px;}</span> <span
+            class="answer-badge answer-v">VERO</span></li>
+      </ul>
+      <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+        <strong>Motivazione:</strong> La 2 è sintatticamente errata: la proprietà corretta per lo sfondo è
+        <code>background-color: black</code> o semplicemente <code>background: black</code>.
+      </div>
+    </div>
 
-        <div class="question-block" id="q3">
-            <h4 class="question-title">Domanda 3: Il concetto di statelessness nei servizi web RESTful significa che</h4>
-            <ul class="solution-list">
-                <li class="solution-item"><span>1. Ogni richiesta HTTP è eseguita in isolamento</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>2. Il server usa informazioni da richieste precedenti, nella stessa sessione</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>3. Il client inserisce tutto ciò che è necessario a soddisfare la richiesta</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>4. I servizi web utilizzano HTTP per la gestione della sessione di comunicazione</span> <span class="answer-badge answer-f">FALSO</span></li>
-            </ul>
-        </div>
+    <div class="question-block" id="q3">
+      <h4 class="question-title">Domanda 3: Il concetto di statelessness nei servizi web RESTful significa che</h4>
+      <ul class="solution-list">
+        <li class="solution-item"><span>1. Ogni richiesta HTTP è eseguita in isolamento</span> <span
+            class="answer-badge answer-v">VERO</span></li>
+        <li class="solution-item"><span>2. Il server usa informazioni da richieste precedenti, nella stessa
+            sessione</span> <span class="answer-badge answer-f">FALSO</span></li>
+        <li class="solution-item"><span>3. Il client inserisce tutto ciò che è necessario a soddisfare la
+            richiesta</span> <span class="answer-badge answer-v">VERO</span></li>
+        <li class="solution-item"><span>4. I servizi web utilizzano HTTP per la gestione della sessione di
+            comunicazione</span> <span class="answer-badge answer-f">FALSO</span></li>
+      </ul>
+    </div>
 
-        <div class="question-block" id="q4">
-            <h4 class="question-title">Domanda 4: Si consideri il seguente script JavaScript, quale sarà l'output?</h4>
-            <div class="code-cube">
-                <div class="code-cube-header">JAVASCRIPT</div>
-                <pre><code>var b=1;
+    <div class="question-block" id="q4">
+      <h4 class="question-title">Domanda 4: Si consideri il seguente script JavaScript, quale sarà l'output?</h4>
+      <div class="code-cube">
+        <div class="code-cube-header">JAVASCRIPT</div>
+        <pre><code>var b=1;
 function outer() {
   var b=2;
   function inner() {
@@ -125,24 +139,28 @@ function outer() {
   inner();
 }
 outer();</code></pre>
-            </div>
-            <ul class="solution-list">
-                <li class="solution-item"><span>1. 1</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>2. 2</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>3. 3</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>4. 6</span> <span class="answer-badge answer-f">FALSO</span></li>
-            </ul>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
-                <strong>Motivazione (max 3 righe):</strong> A causa del meccanismo di <em>hoisting</em>, la dichiarazione <code>var b</code> viene sollevata all'inizio della funzione <code>inner()</code> come <code>undefined</code>. L'istruzione <code>b++</code> opera su undefined dando NaN, dopodiché viene assegnato <code>b=3</code>; pertanto il log stamperà 3.
-            </div>
-        </div>
+      </div>
+      <ul class="solution-list">
+        <li class="solution-item"><span>1. 1</span> <span class="answer-badge answer-f">FALSO</span></li>
+        <li class="solution-item"><span>2. 2</span> <span class="answer-badge answer-f">FALSO</span></li>
+        <li class="solution-item"><span>3. 3</span> <span class="answer-badge answer-v">VERO</span></li>
+        <li class="solution-item"><span>4. 6</span> <span class="answer-badge answer-f">FALSO</span></li>
+      </ul>
+      <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+        <strong>Motivazione (max 3 righe):</strong> A causa del meccanismo di <em>hoisting</em>, la dichiarazione
+        <code>var b</code> viene sollevata all'inizio della funzione <code>inner()</code> come <code>undefined</code>.
+        L'istruzione <code>b++</code> opera su undefined dando NaN, dopodiché viene assegnato <code>b=3</code>; pertanto
+        il log stamperà 3.
+      </div>
+    </div>
 
-        <div class="question-block" id="qa1">
-            <h4 class="question-title">Domanda a risposta aperta</h4>
-            <p>Dato il seguente codice HTML/Javascript descrivere sinteticamente il significato delle righe numerate. Si dia anche una descrizione generica della pagina.</p>
-            <div class="code-cube">
-                <div class="code-cube-header">HTML / JS</div>
-                <pre><code>&lt;html&gt;
+    <div class="question-block" id="qa1">
+      <h4 class="question-title">Domanda a risposta aperta</h4>
+      <p>Dato il seguente codice HTML/Javascript descrivere sinteticamente il significato delle righe numerate. Si dia
+        anche una descrizione generica della pagina.</p>
+      <div class="code-cube">
+        <div class="code-cube-header">HTML / JS</div>
+        <pre><code>&lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;Di tutto un po'...&lt;/title&gt;
 &lt;script type="text/JavaScript"&gt;
@@ -154,7 +172,7 @@ function pieno () {
   dato_in = document.f.x.value;
   if (dato_in) {
     for (var i=0; i &lt; dato_in.length; i++) {
-      if (dato_in.charAt(i) != "")
+      if (dato_in.charAt(i) != " ")
         return true;
     }
   }
@@ -176,22 +194,30 @@ function pieno () {
   &lt;br /&gt;&lt;br /&gt;&lt;a href="JavaScript: history.go(-1)"&gt;&lt;img width="50" height="25" src="b.gif" /&gt;&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-            </div>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
-                <strong>Soluzione:</strong><br>
-                Generico: La pagina è un modulo interattivo con controlli lato client in JavaScript per la validazione di una form e la stampa della data.<br><br>
-                - <strong><code>function check()</code></strong>: All'evento <code>onLoad</code> del tag <code>body</code>, verifica l'identità del browser. Se non è Internet Explorer, mostra un popup di avviso.<br>
-                - <strong><code>document.write(...)</code></strong>: Stampa dinamicamente all'interno della pagina la data odierna formattandola in formato GG/MM/ANNO all'interno di un'intestazione <code>h2</code>.<br>
-                - <strong><code>&lt;form name="f" ... &gt;</code></strong>: Modulo che invia in <code>GET</code> il campo testo "x" a uno script lato server ("elabora.tcl").<br>
-                - <strong><code>function pieno()</code> / <code>onmouseover</code></strong>: L'immagine <code>verifica.jpg</code> possiede un trigger che si attiva al passaggio del mouse. Invoca la funzione <code>pieno()</code> che itera sul contenuto dell'input testuale per verificare se l'utente ha inserito almeno un carattere; se è vuoto solleva un <code>alert</code> di Errore.<br>
-                - <strong><code>history.go(-1)</code></strong>: L'ultima immagine funge da link che sfrutta le API del browser per far tornare indietro l'utente di una pagina nella cronologia di navigazione.
-            </div>
-        </div>
+      </div>
+      <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+        <strong>Soluzione:</strong><br>
+        Generico: La pagina è un modulo interattivo con controlli lato client in JavaScript per la validazione di una
+        form e la stampa della data.<br><br>
+        - <strong><code>function check()</code></strong>: All'evento <code>onLoad</code> del tag <code>body</code>,
+        verifica l'identità del browser. Se non è Internet Explorer, mostra un popup di avviso.<br>
+        - <strong><code>document.write(...)</code></strong>: Stampa dinamicamente all'interno della pagina la data
+        odierna formattandola in formato GG/MM/ANNO all'interno di un'intestazione <code>h2</code>.<br>
+        - <strong><code>&lt;form name="f" ... &gt;</code></strong>: Modulo che invia in <code>GET</code> il campo testo
+        "x" a uno script lato server ("elabora.tcl").<br>
+        - <strong><code>function pieno()</code> / <code>onmouseover</code></strong>: L'immagine
+        <code>verifica.jpg</code> possiede un trigger che si attiva al passaggio del mouse. Invoca la funzione
+        <code>pieno()</code> che itera sul contenuto dell'input testuale per verificare se l'utente ha inserito almeno
+        un carattere; se è vuoto solleva un <code>alert</code> di Errore.<br>
+        - <strong><code>history.go(-1)</code></strong>: L'ultima immagine funge da link che sfrutta le API del browser
+        per far tornare indietro l'utente di una pagina nella cronologia di navigazione.
+      </div>
+    </div>
 
-    </main>
+  </main>
 
-    <button id="back-to-top">↑</button>
-    <script src="script.js"></script>
+  <button id="back-to-top">↑</button>
+  <script src="script.js"></script>
 </body>
 
 </html>

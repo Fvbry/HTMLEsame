@@ -32,13 +32,22 @@
         <div class="question-block" id="q1">
             <h4 class="question-title">Domanda 1: I fogli di stile CSS</h4>
             <ul class="solution-list">
-                <li class="solution-item"><span>1. Richiedono versioni HTML precedenti a HTML5.</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>2. Definiscono lo stile di visualizzazione/formattazione.</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>3. Definiscono delle regole con la sintassi "selettore [proprietà: valore, ...]".</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>4. Utilizzano il selettore id per identificare lo stile di un singolo elemento all'interno della pagina HTML.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>1. Richiedono versioni HTML precedenti a HTML5.</span> <span
+                        class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>2. Definiscono lo stile di visualizzazione/formattazione.</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Definiscono delle regole con la sintassi "selettore [proprietà:
+                        valore, ...]".</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Utilizzano il selettore id per identificare lo stile di un singolo
+                        elemento all'interno della pagina HTML.</span> <span class="answer-badge answer-v">VERO</span>
+                </li>
             </ul>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
-                <strong>Motivazione:</strong> La 1 è falsa perché CSS è pienamente supportato ed essenziale in HTML5. La 3 è tecnicamente falsa a causa della sintassi riportata: in CSS le regole si definiscono racchiudendo le proprietà tra parentesi graffe <code>{ }</code> e separate da punto e virgola <code>;</code>, non tra parentesi quadre con la virgola.
+            <div
+                style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è falsa perché CSS è pienamente supportato ed essenziale in HTML5. La
+                3 è tecnicamente falsa a causa della sintassi riportata: in CSS le regole si definiscono racchiudendo le
+                proprietà tra parentesi graffe <code>{ }</code> e separate da punto e virgola <code>;</code>, non tra
+                parentesi quadre con la virgola.
             </div>
         </div>
 
@@ -47,37 +56,53 @@
             <div class="code-cube">
                 <div class="code-cube-header">CSS</div>
                 <pre><code>div {
-  width: 200px;
-  height: 200px;
-  background: blue;
-  transition: width 4s, height 2s, transform 2s;
-}
-div:hover {
-  width: 400px;
-  height: 400px;
-  transform: rotate (90deg);
+                    width: 200px;
+                    height: 200px;
+                    background: blue;
+                    transition: width 4s, height 2s, transform 2s;
+                    }
+                    div:hover {
+                    width: 400px;
+                    height: 400px;
+                    transform: rotate(90deg);
 }</code></pre>
             </div>
             <ul class="solution-list">
-                <li class="solution-item"><span>1. Al passare del mouse sopra l'elemento div, ingrandisce l'elemento div.</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>2. Definisce un'animazione basata su HTML5.</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>3. Al passare del mouse sopra l'elemento div, inizia un'animazione della durata di 8 secondi.</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>4. Al passare del mouse sopra l'elemento div, sposta l'elemento div verso destra.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>1. Al passare del mouse sopra l'elemento div, ingrandisce l'elemento
+                        div.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Definisce un'animazione basata su HTML5.</span> <span
+                        class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Al passare del mouse sopra l'elemento div, inizia un'animazione della
+                        durata di 8 secondi.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Al passare del mouse sopra l'elemento div, sposta l'elemento div
+                        verso destra.</span> <span class="answer-badge answer-f">FALSO</span></li>
             </ul>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
-                <strong>Motivazione:</strong> La 1 è vera (larghezza e altezza passano da 200px a 400px). La 2 è falsa perché si tratta di CSS3, non HTML5. La 3 è falsa: le transizioni partono in contemporanea, quindi la durata totale dell'effetto corrisponde a quella della transizione più lunga, ovvero <strong>4 secondi</strong> (non la somma di 4+2+2). La 4 è falsa perché il div viene ruotato sul proprio asse (<code>rotate 90deg</code>), non spostato (nessun <code>translateX</code> o <code>left</code>).
+            <div
+                style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> La 1 è vera (larghezza e altezza passano da 200px a 400px). La 2 è falsa
+                perché si tratta di CSS3, non HTML5. La 3 è falsa: le transizioni partono in contemporanea, quindi la
+                durata totale dell'effetto corrisponde a quella della transizione più lunga, ovvero <strong>4
+                    secondi</strong> (non la somma di 4+2+2). La 4 è falsa perché il div viene ruotato sul proprio asse
+                (<code>rotate 90deg</code>), non spostato (nessun <code>translateX</code> o <code>left</code>).
             </div>
         </div>
 
         <div class="question-block" id="q3">
             <h4 class="question-title">Domanda 3: Il semantic markup in HTML5</h4>
             <ul class="solution-list">
-                <li class="solution-item"><span>1. Rende una pagina web comprensibile sia all'uomo che alla macchina.</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>2. Migliora l'usabilità per persone con disabilità.</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>3. Associa un significato al contenuto.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>1. Rende una pagina web comprensibile sia all'uomo che alla
+                        macchina.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Migliora l'usabilità per persone con disabilità.</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>3. Associa un significato al contenuto.</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
             </ul>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
-                <strong>Motivazione:</strong> L'uso di tag semantici (es. <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>) non solo rende il codice più chiaro per i programmatori e i motori di ricerca, ma è fondamentale per le tecnologie assistive (come gli screen reader) che aiutano gli utenti ipovedenti a navigare correttamente la struttura della pagina.
+            <div
+                style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione:</strong> L'uso di tag semantici (es. <code>&lt;article&gt;</code>,
+                <code>&lt;nav&gt;</code>) non solo rende il codice più chiaro per i programmatori e i motori di ricerca,
+                ma è fondamentale per le tecnologie assistive (come gli screen reader) che aiutano gli utenti ipovedenti
+                a navigare correttamente la struttura della pagina.
             </div>
         </div>
 
@@ -86,57 +111,74 @@ div:hover {
             <div class="code-cube">
                 <div class="code-cube-header">HTML / JS</div>
                 <pre><code>&lt;FORM NAME="modulo" onSubmit="print(); return false;"&gt;
-  &lt;SELECT NAME="menu" id="menuid"&gt;
-    &lt;OPTION ID="op1" VALUE="stufato"&gt;Stufato di manzo&lt;/OPTION&gt;
-    &lt;OPTION ID="op2" VALUE="tagliata"&gt;Tagliata&lt;/OPTION&gt;
-  &lt;/SELECT&gt;
-  &lt;INPUT TYPE="Submit" VALUE="OK"&gt;
-&lt;/FORM&gt;
+                    &lt;SELECT NAME="menu" id="menuid"&gt;
+                        &lt;OPTION ID="op1" VALUE="stufato"&gt;Stufato di manzo&lt;/OPTION&gt;
+                        &lt;OPTION ID="op2" VALUE="tagliata"&gt;Tagliata&lt;/OPTION&gt;
+                    &lt;/SELECT&gt;
+                    &lt;INPUT TYPE="Submit" VALUE="OK"&gt;
+                    &lt;/FORM&gt;
 
-&lt;SCRIPT language="JavaScript"&gt;
-var city = prompt("Sei carnivoro o vegetariano?", "Carnivoro");
-if(city == "Vegetariano") {
-  window.document.modulo.menu.options[0].text="Minestra";
-  window.document.modulo.menu.options[1].text="Patate al forno";
-}
-var select = document.getElementById('menuid');
-var opt = document.createElement('option');
-opt.id = "op3";
-opt.value = "pasta";
-opt.innerHTML = "Pasta aglio e olio";
-select.appendChild(opt);
-&lt;/SCRIPT&gt;</code></pre>
+                    &lt;SCRIPT language="JavaScript"&gt;
+                        var city = prompt("Sei carnivoro o vegetariano?", "Carnivoro");
+                        if(city == "Vegetariano") {
+                        window.document.modulo.menu.options[0].text="Minestra";
+                        window.document.modulo.menu.options[1].text="Patate al forno";
+                        
+                        var select = document.getElementById('menuid');
+                        var opt = document.createElement('option');
+                        opt.id = "op3";
+                        opt.value = "pasta";
+                        opt.innerHTML = "Pasta aglio e olio";
+                        select.appendChild(opt);
+                        }
+                    &lt;/SCRIPT&gt;</code></pre>
             </div>
             <ul class="solution-list">
-                <li class="solution-item"><span>1. Minestra in posizione 0 ove presente.</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>2. Stufato di manzo e Tagliata sempre presenti tra le opzioni.</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>3. Pasta aglio e olio sempre dopo Stufato di manzo.</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>4. Pasta aglio e olio e Stufato di manzo mai insieme.</span> <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>1. Minestra in posizione 0 ove presente.</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Stufato di manzo e Tagliata sempre presenti tra le opzioni.</span>
+                    <span class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. Pasta aglio e olio sempre dopo Stufato di manzo.</span> <span
+                        class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>4. Pasta aglio e olio e Stufato di manzo mai insieme.</span> <span
+                        class="answer-badge answer-f">FALSO</span></li>
             </ul>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
-                <strong>Motivazione (max 6 righe):</strong><br> 
+            <div
+                style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+                <strong>Motivazione (max 6 righe):</strong><br>
                 1. VERO: se l'utente inserisce "Vegetariano", "Minestra" sovrascrive l'elemento all'indice 0.<br>
                 2. FALSO: se l'utente è "Vegetariano", Stufato e Tagliata vengono sovrascritti.<br>
-                3. FALSO: se l'utente è "Vegetariano", "Stufato di manzo" scompare, quindi la pasta non può trovarsi "dopo" di esso.<br>
-                4. FALSO: se l'utente risponde qualsiasi cosa diversa da "Vegetariano" (es. "Carnivoro"), lo script non entra nell'if. Stufato rimane e "Pasta aglio e olio" viene aggiunto alla fine, coesistendo entrambi.
+                3. FALSO: se l'utente è "Vegetariano", "Stufato di manzo" scompare, quindi la pasta non può trovarsi
+                "dopo" di esso.<br>
+                4. FALSO: se l'utente risponde qualsiasi cosa diversa da "Vegetariano" (es. "Carnivoro"), lo script non
+                entra nell'if. Stufato rimane e "Pasta aglio e olio" viene aggiunto alla fine, coesistendo entrambi.
             </div>
         </div>
 
         <div class="question-block" id="q5">
             <h4 class="question-title">Domanda 5: L'oggetto XMLHttpRequest</h4>
             <ul class="solution-list">
-                <li class="solution-item"><span>1. Permette di ricevere dati dopo che la pagina è stata caricata.</span> <span class="answer-badge answer-v">VERO</span></li>
-                <li class="solution-item"><span>2. Permette di scambiare solo dati in formato XML.</span> <span class="answer-badge answer-f">FALSO</span></li>
-                <li class="solution-item"><span>3. È usato per scambiare dati in background con il server.</span> <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>1. Permette di ricevere dati dopo che la pagina è stata caricata.</span>
+                    <span class="answer-badge answer-v">VERO</span></li>
+                <li class="solution-item"><span>2. Permette di scambiare solo dati in formato XML.</span> <span
+                        class="answer-badge answer-f">FALSO</span></li>
+                <li class="solution-item"><span>3. È usato per scambiare dati in background con il server.</span> <span
+                        class="answer-badge answer-v">VERO</span></li>
             </ul>
         </div>
 
         <div class="question-block" id="qa1">
             <h4 class="question-title">Domanda a Risposta Aperta 1: HTML DOM e JavaScript</h4>
-            <p>Nell'ambito del linguaggio di scripting JavaScript, si descriva il ruolo dell'HTML DOM per la modifica degli elementi di una pagina web e si proponga un esempio del suo utilizzo.</p>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+            <p>Nell'ambito del linguaggio di scripting JavaScript, si descriva il ruolo dell'HTML DOM per la modifica
+                degli elementi di una pagina web e si proponga un esempio del suo utilizzo.</p>
+            <div
+                style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
                 <strong>Soluzione:</strong><br>
-                L'HTML DOM (Document Object Model) è un'API e un modello ad albero che rappresenta la struttura del documento HTML in memoria. Il suo ruolo fondamentale è permettere ai linguaggi di scripting, in particolare a JavaScript, di accedere a tutti gli elementi della pagina in modo dinamico. Tramite il DOM, JavaScript può leggere o modificare i contenuti (testo), cambiare lo stile (CSS), e aggiungere, spostare o rimuovere tag (nodi) in risposta alle azioni dell'utente, senza ricaricare la pagina.<br><br>
+                L'HTML DOM (Document Object Model) è un'API e un modello ad albero che rappresenta la struttura del
+                documento HTML in memoria. Il suo ruolo fondamentale è permettere ai linguaggi di scripting, in
+                particolare a JavaScript, di accedere a tutti gli elementi della pagina in modo dinamico. Tramite il
+                DOM, JavaScript può leggere o modificare i contenuti (testo), cambiare lo stile (CSS), e aggiungere,
+                spostare o rimuovere tag (nodi) in risposta alle azioni dell'utente, senza ricaricare la pagina.<br><br>
                 <strong>Esempio di utilizzo:</strong><br>
                 <code>&lt;p id="demo"&gt;Vecchio Testo&lt;/p&gt;</code><br>
                 <code>&lt;button onclick="document.getElementById('demo').innerHTML = 'Nuovo Testo!'"&gt;Cambia&lt;/button&gt;</code>
@@ -145,11 +187,21 @@ select.appendChild(opt);
 
         <div class="question-block" id="qa2">
             <h4 class="question-title">Domanda a Risposta Aperta 2: SOAP Web Service e WSDL</h4>
-            <p>Dopo aver introdotto le caratteristiche principali dei SOAP Web Service, si descriva il ruolo del protocollo WSDL.</p>
-            <div style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
+            <p>Dopo aver introdotto le caratteristiche principali dei SOAP Web Service, si descriva il ruolo del
+                protocollo WSDL.</p>
+            <div
+                style="background: rgba(46, 125, 50, 0.1); padding: 15px; border-left: 4px solid #4caf50; margin-top: 10px;">
                 <strong>Soluzione:</strong><br>
-                I <strong>SOAP Web Service</strong> si basano su un protocollo (Simple Object Access Protocol) di comunicazione molto rigoroso e formale per lo scambio di dati strutturati (esclusivamente in formato XML) tra macchine su una rete. Sono "platform independent", ma fortemente strutturati in Envelope, Header e Body.<br><br>
-                Il <strong>WSDL (Web Services Description Language)</strong> è un documento in formato XML che svolge un ruolo fondamentale: funge da "contratto" pubblico del servizio. Il suo scopo è descrivere <em>cosa</em> fa il Web Service e <em>come</em> comunicare con esso. Definisce in dettaglio i metodi (operazioni) disponibili, i formati esatti dei messaggi XML richiesti in input e restituiti in output, e il "binding", ovvero le specifiche di rete e l'URL esatto (endpoint) su cui il servizio è in ascolto per ricevere la chiamata SOAP.
+                I <strong>SOAP Web Service</strong> si basano su un protocollo (Simple Object Access Protocol) di
+                comunicazione molto rigoroso e formale per lo scambio di dati strutturati (esclusivamente in formato
+                XML) tra macchine su una rete. Sono "platform independent", ma fortemente strutturati in Envelope,
+                Header e Body.<br><br>
+                Il <strong>WSDL (Web Services Description Language)</strong> è un documento in formato XML che svolge un
+                ruolo fondamentale: funge da "contratto" pubblico del servizio. Il suo scopo è descrivere <em>cosa</em>
+                fa il Web Service e <em>come</em> comunicare con esso. Definisce in dettaglio i metodi (operazioni)
+                disponibili, i formati esatti dei messaggi XML richiesti in input e restituiti in output, e il
+                "binding", ovvero le specifiche di rete e l'URL esatto (endpoint) su cui il servizio è in ascolto per
+                ricevere la chiamata SOAP.
             </div>
         </div>
 

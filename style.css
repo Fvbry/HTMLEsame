@@ -107,28 +107,31 @@ main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
     border-radius: 6px;
     margin: 1rem 0;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Aggiunge una leggera ombreggiatura per dare profondità */
 }
 
 .code-cube-header {
-    background-color: #222;
-    padding: 0.3rem 1rem;
-    font-size: 0.8rem;
-    color: #aaa;
+    background-color: #2d2d2d; /* Leggermente più chiaro per staccare dallo sfondo del codice */
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    color: #cccccc;
     border-bottom: 1px solid var(--border-color);
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: system-ui, -apple-system, sans-serif; /* Un font pulito per l'header */
 }
 
 .code-cube pre {
     margin: 0;
-    padding: 1rem;
+    padding: 1.2rem;
     overflow-x: auto;
+    line-height: 1.5; /* FONDAMENTALE: aumenta lo spazio tra le righe per facilitare la lettura */
 }
 
 .code-cube code {
     font-family: "Fira Code", Consolas, Monaco, monospace;
     font-size: 0.95rem;
-    color: #00ff00; /* Stile terminale */
+    color: #d4d4d4; /* Un grigio chiaro/bianco sporco: è il colore standard di VS Code, molto riposante */
 }
 
 /* Risposte */
