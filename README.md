@@ -1,2 +1,0 @@
-# HTMLEsame
-Insieme esami PWM
